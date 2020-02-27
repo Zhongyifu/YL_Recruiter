@@ -1,0 +1,22 @@
+/* components/treeMenu.wxss */
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 122px;
+  left: 0;
+  z-index: 10;
+  transition: all 300ms ease-out;
+}
+.treeArea .tree-title {
+  font-size: 30rpx;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+  color: #666;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

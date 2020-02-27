@@ -1,0 +1,157 @@
+.page_hd, .page_bd {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.appInfo {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.appInfo .appInfo-name {
+  width: 75%;
+}
+
+.appInfo-name view:last-child {
+  margin-top: 10px;
+}
+
+.appInfo-name view:first-child text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.appInfo-headP {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.appInfo-headP .sex-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 15px;
+  height: 15px;
+}
+
+.appInfo-headP .appHp {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* part.2 */
+
+.appMessage {
+  margin-top: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.appMessage .yl-row {
+  margin-bottom: 10px;
+}
+
+.appMessage .message-item .item-state {
+  width: 80%;
+}
+
+.appMessage .message-item .item-activity {
+  width: 20%;
+  text-align: center;
+}
+
+.item-message {
+  width: 20%;
+}
+
+.item-message icon {
+  margin-bottom: 4px;
+  margin-right: 3px;
+}
+
+.item-message text {
+  line-height: 10px;
+}
+
+/* part.3 */
+
+.job-expect view:last-child {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.item-info {
+  margin-top: 10px;
+}
+
+.item-info .fontSix {
+  width: 75%;
+}
+
+.item-info .fontSix text {
+  margin-right: 10px;
+}
+
+.item-info view:last-child {
+  width: 25%;
+  text-align: center;
+}
+
+/* part.4 */
+
+.page_bd .bd-item {
+  padding: 10px 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+.job-exp .item-info view:last-child {
+  width: 35%;
+}
+
+.job-exp .job-work {
+  margin-top: 5px;
+}
+
+.job-tag {
+  margin-top: 10px;
+}
+
+.job-tag .tag-item {
+  max-width: 33%;
+  margin-right: 10px;
+  padding: 0px 5px;
+  border: 1px solid #199ed8;
+}
+
+.job-project .item-info view:last-child {
+  width: 35%;
+}
+
+.job-eduExp .item-info view:last-child {
+  width: 35%;
+}
+
+.job-eduExp {
+  padding-bottom: 20px;
+}
+
+.page_bd {
+  padding-bottom: 100px;
+}
+
+.btnArea {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  padding: 15px 0px;
+  background-color: #fff;
+  border: 1px solid #eeeef4;
+}
+
+.btnArea button {
+  width: 90%;
+}

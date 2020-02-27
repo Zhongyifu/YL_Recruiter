@@ -1,0 +1,132 @@
+/* pages/tabBarInfo/comInfo/incomplete.wxss */
+.page_hd, .page_bd {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.page_hd .hd-title {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.page_hd .text-sm {
+  margin-bottom: 5px;
+}
+
+.page_bd {
+  margin-top: 20px;
+}
+
+.page_bd .item-title {
+  font-weight: 600;
+  padding: 10px 0px;
+}
+
+.page_bd .item-cell {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  color: gray;
+}
+
+.page_bd .item-cell:first-child {
+  border-top: 1px solid #ccc;
+}
+
+.page_bd .item-cell view:first-child {
+  width: 75%;
+}
+
+.select-modal .uplodaArea {
+  height: 140px;
+  width: 140px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.select-modal .uplodaArea text {
+  font-size: 80px;
+  color: #999;
+}
+
+.select-modal .uplodaArea image {
+  width: 100%;
+  height: 100%;
+}
+
+.select-modal .btnArea {
+  width: 170px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.select-modal .websiteInput {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.select-modal .websiteHead {
+  border: 1px solid #ccc;
+  padding: 0px 8px;
+}
+
+.select-modal .websiteBody {
+  margin-left: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.select-modal .websiteBody input {
+  padding: 5px;
+  width: 215px;
+}
+
+.select-modal .comprofile {
+  border: 1px solid #ccc;
+  height: 185px;
+  padding: 3px;
+}
+
+.select-modal .inputTime {
+  padding: 10px 0px;
+}
+
+.select-modal .inputTime:first-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.select-modal .inputTime input {
+  border-bottom: 1px solid red;
+  width: 35px;
+  height: 30px;
+  margin: 0px 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.select-modal .welfareArea view {
+  border: 1px solid red;
+}
+
+.select-modal .uplodaListArea {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 55px;
+  color: #999;
+  border: 1px solid #ccc;
+}
+
+.select-modal .comPhoto {
+  display: inline-block;
+  border: 1px solid #ccc;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+
+.select-modal .comPhoto image {
+  width: 100%;
+  height: 100%;
+}

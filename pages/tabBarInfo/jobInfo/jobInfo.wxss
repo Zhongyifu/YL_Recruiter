@@ -1,0 +1,19 @@
+/* pages/tabBarInfo/jobInfo/jobInfo.wxss */
+
+.chooseType {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px 0px;
+}
+
+.chooseType picker {
+  border: 1px solid #ccc;
+  width: 55%;
+  float: right;
+  text-align: center;
+}
+
+.page_bd {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+}

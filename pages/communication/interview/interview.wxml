@@ -1,0 +1,41 @@
+<!--pages/communication/interview/interview.wxml-->
+<view class="page">
+  <view class="page_hd">
+    <view class="searchArea">
+      <input placeholder="请输入精英姓名" bindinput="searchName"></input>
+      <view class="borderView"></view>
+      <button class="serchBtn" bindtap="searchBtn">
+        <icon class="iconfont icon-search1"></icon>
+      </button>
+    </view>
+  </view>
+
+  <view class="page_bd">
+
+    <block wx:for="{{listDataJson}}" wx:key="listData" wx:for-item="item">
+      <view class="resItem" data-index='{{item.interviewId}}' bindtap="showInfo">
+        <view class="userInfo">
+          <view class="user_profile">
+            <image src="{{item.userImg}}"></image>
+          </view>
+          <text>{{item.userName}}</text>
+          <icon class="iconfont {{item.userSex == '男'? 'icon-male' :'icon-female'}}"></icon>
+        </view>
+        <view class="interInfo">
+          <view>面试岗位：
+            <text class="inter_item">{{item.jobName}}<text class="text_dot">·</text>{{item.salaryRangeTypeName}}</text>
+          </view>
+          <view>面试时间：
+            <text class="inter_item">{{item.interviewTime}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="page_ft">
+    <text>——————</text>
+    <text>{{isEmptyText}}</text>
+    <text>——————</text>
+  </view>
+</view>

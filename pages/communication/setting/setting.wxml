@@ -1,0 +1,148 @@
+<!--pages/communication/setting/setting.wxml-->
+<view class="page">
+  <view class="page_bd">
+    <view class="section">
+
+      <view class="section_item">
+        <view class="hasAuxiliary">
+          <text class="item_left">消息提醒\n</text>
+          <text class="auxiliary">当有面试邀约时发送消息</text>
+        </view>
+        <view class="item_right">
+          <switch checked="{{isSendMsgInterview}}" bindchange="updateRemind" />
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view class="hasAuxiliary">
+          <text class="item_left">短信提醒\n</text>
+          <text class="auxiliary">当有面试邀约时发送短信</text>
+        </view>
+        <view class="item_right">
+          <switch checked="{{isSendSMSInterview}}" bindchange="updateSMS" />
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">招呼设置</text>
+        </view>
+        <view class="item_right">
+          <icon class="iconfont icon-youjiantou" bindtap="updateGreeting"></icon>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section_item">
+        <view>
+          <text class="item_left">修改手机号码</text>
+        </view>
+        <view class="item_right">
+          <icon class="iconfont icon-youjiantou" bindtap="updateUserPhone"></icon>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section_item">
+        <view>
+          <text class="item_left">帮助与反馈</text>
+        </view>
+        <view class="item_right">
+          <icon class="iconfont icon-youjiantou" bindtap="helpAfeedback"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">关于我们</text>
+        </view>
+        <view class="item_right">
+          <icon class="iconfont icon-youjiantou" bindtap="aboutUs"></icon>
+        </view>
+      </view>
+    </view>
+
+    <view class="section loginOut">
+      <view class="section_item" bindtap="loginOut">
+        <text>退出登录</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="select-modal">
+
+  <select-modal id="editGreeting" fadeStyle="slideDown" height="360px;">
+    <view slot="modalName">
+      <text>设置常用问候语</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">自动招呼</view>
+          <view class="weui-cell__ft">
+            <switch checked='{{isAutoGreeting}}' bindchange="updateAutoGreeting" />
+          </view>
+        </view>
+
+        <form bindsubmit='editGreetingForm'>
+          <radio-group bindchange='changeGreetion'>
+            <view class="weui-cell greetion">
+              <view class="weui-cell__hd">
+                <view class="weui-label">
+                  <radio class="weui-check" checked='{{isDefault_gs1}}' value="1"></radio>
+                </view>
+              </view>
+              <view class="weui-cell__bd">
+                <input class="weui-input" value="{{greetingStr1}}" name='greetingInput1' />
+              </view>
+            </view>
+
+            <view class="weui-cell greetion">
+              <view class="weui-cell__hd">
+                <view class="weui-label">
+                  <radio class="weui-check" checked='{{isDefault_gs2}}' value="2"></radio>
+                </view>
+              </view>
+              <view class="weui-cell__bd">
+                <input class="weui-input" value="{{greetingStr2}}" name='greetingInput2' />
+              </view>
+            </view>
+
+            <view class="weui-cell greetion">
+              <view class="weui-cell__hd">
+                <view class="weui-label">
+                  <radio class="weui-check" checked="{{isDefault_gs3}}" value="3"></radio>
+                </view>
+              </view>
+              <view class="weui-cell__bd">
+                <input class="weui-input" value="{{greetingStr3}}" name='greetingInput3' />
+              </view>
+            </view>
+          </radio-group>
+          <view class="weui-btn-area">
+            <button type="primary" formType="submit" class="weui-btn">保存问候语</button>
+          </view>
+        </form>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="editUserPhone" fadeStyle="slideDown" height="175px;">
+    <view slot="modalName">
+      <text>修改手机号码</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <input class="weui-input userPhone" maxlength="11" value="{{userPhone}}" bindinput="editInput_userPhone" confirm-type="done"></input>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitUserPhone">确定使用</button>
+      </view>
+    </view>
+  </select-modal>
+</view>

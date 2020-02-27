@@ -1,0 +1,4 @@
+{
+  "usingComponents": {"modal": "/components/modal/modal"},
+  "navigationBarTitleText": "想招聘的精英"
+}

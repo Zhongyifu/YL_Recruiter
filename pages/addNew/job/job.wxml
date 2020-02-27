@@ -1,0 +1,236 @@
+<view class='page'>
+  <view class="page_bd">
+    <view class="section section_A">
+      <view class="section_item">
+        <view>
+          <text class="item_left">职位名称</text>
+        </view>
+        <view class="item_right">
+          <text>{{jobName}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateJobName"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">职位类型</text>
+        </view>
+        <view class="item_right">
+          <text>{{jobType}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateJobType"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">技能要求</text>
+        </view>
+        <view class="item_right">
+          <text>{{jobSkill}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateJopbSkill"></icon>
+        </view>
+      </view>
+    </view>
+
+    <view class="section section_B">
+      <view class="section_item">
+        <view>
+          <text class="item_left">经验要求</text>
+        </view>
+        <view class="item_right">
+          <text>{{jobExperience}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateJobExperience"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">学历要求</text>
+        </view>
+        <view class="item_right">
+          <text>{{jobEducation}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateJobEducation"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">月薪要求</text>
+        </view>
+        <view class="item_right">
+          <text>{{jobSalary}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateJobSalary"></icon>
+        </view>
+      </view>
+    </view>
+
+    <view class="section section_C">
+      <view class="section_item">
+        <view>
+          <text class="item_left">职位描述</text>
+        </view>
+        <view class="item_right">
+          <text>{{jobIntro}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateJobIntro"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">工作地点</text>
+        </view>
+        <view class="item_right">
+          <text>{{jobAddress}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateJobAddress"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="page_ft pageFixBtn">
+    <button bindtap="submitAllData">完成</button>
+  </view>
+</view>
+
+<view class="select-modal">
+
+  <modal id="editJobName" fadeStyle="slideDown" height="160px;">
+    <view slot="modalName">
+      <text>职位名称</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <input class="weui-input" bindinput="editInput_jobName" confirm-type="done" placeholder="请填写"></input>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitJobName">提交</button>
+      </view>
+    </view>
+  </modal>
+
+  <modal id="editJobType" fadeStyle="slideDown" height="460px;">
+    <view slot="modalName">
+      <text>职位类型</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <!-- 第一次循环 -->
+        <block wx:for="{{jobTypeNode_oneRs}}" wx:for-item="item_one" wx:for-index="idx_one" wx:key="jobTypeOne">
+          <view class="jobTypeItem">
+            <view bindtap="openNodeTwo" data-index="{{idx_one}}" data-ffm="{{item_one.ffm}}">
+              <text class="itemOne">Ⅰ.\t{{item_one.name}}</text>
+            </view>
+
+            <!-- 第二层循环 -->
+            <block wx:if="{{openNodeTwo}}">
+              <block wx:for='{{jobTypeNode_twoRs}}' wx:for-item='item_two' wx:for-index="idx_two" wx:key="jobTypeTwo">
+                <block wx:if="{{item_two.ffm == item_one.ffm}}">
+                  <!-- 确认归属 -->
+                  <view class="jobTypeItem">
+                    <view bindtap="openNodeThree" data-index='{{idx_two}}' data-sfm="{{item_two.sfm}}">
+                      <text class="itemTwo">Ⅱ.\t{{item_two.name}}</text>
+                    </view>
+
+                    <!-- 第三层循环 -->
+                    <block wx:if="{{openNodeThree}}">
+                      <block wx:for="{{jobTypeNode_threeRs}}" wx:for-item='item_three' wx:for-index='idx_three' wx:key='jobTypeThree'>
+                        <block wx:if='{{item_three.sfm == item_two.sfm}}'>
+                          <text class="itemThree {{jobTypeId == item_three.id? 'selected':''}}" data-index="{{idx_three}}" data-text="{{item_three.name}}" data-tid='{{item_three.id}}' bindtap="selectedItem">{{item_three.name}}</text>
+                        </block>
+                      </block>
+                    </block>
+
+                  </view>
+                </block>
+              </block>
+
+            </block>
+          </view>
+        </block>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitJobType">提交</button>
+      </view>
+    </view>
+  </modal>
+
+  <modal id='editJobSkill' fadeStyle='slideDown' height='300px'>
+    <view slot="modalName">
+      <text>技能要求</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <!-- <block wx:for='{{jobSkillNode}}' wx:key='jobSkill' wx:for-item='item_skill' wx:for-index='idx_skill'>
+          <text class="skillItem {{skillId == item_skill.labelId? 'selected':''}}" data-labId='{{item_skill.labelId}}' data-text='{{item_skill.labelName}}' bindtap="selectedSkill">{{item_skill.labelName}}</text>
+        </block> -->
+        <textarea name="skillList" class="weui-textarea" placeholder="可填多个，逗号隔开" bindinput="inputJobSkill"></textarea>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitJobSkill">提交</button>
+      </view>
+    </view>
+  </modal>
+
+  <modal id='editJobExperience' fadeStyle='slideDown' height='385px'>
+    <view slot="modalName">
+      <text>经验要求</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <block wx:for='{{jobExpNode}}' wx:key='jobExp' wx:for-item='item_exp' wx:for-index='idx_exp'>
+          <text class="expIten {{expId == item_exp.typeId? 'selected':''}}" data-typeId='{{item_exp.typeId}}' data-text='{{item_exp.typeName}}' bindtap="selectedExp">{{item_exp.typeName}}</text>
+        </block>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitJobExp">提交</button>
+      </view>
+    </view>
+  </modal>
+
+  <modal id='editJobEducation' fadeStyle='slideDown' height='340px'>
+    <view slot="modalName">
+      <text>学历要求</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <block wx:for='{{jobEduNode}}' wx:key='jobEdu' wx:for-item='item_edu' wx:for-index='idx_edu'>
+          <text class="expIten {{eduId == item_edu.typeId? 'selected':''}}" data-typeId='{{item_edu.typeId}}' data-text='{{item_edu.typeName}}' bindtap="selectedEdu">{{item_edu.typeName}}</text>
+        </block>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitJobEdu">提交</button>
+      </view>
+    </view>
+  </modal>
+
+  <modal id='editJobSalary' fadeStyle='slideDown' height='460px'>
+    <view slot='modalName'>
+      <text>月薪要求</text>
+    </view>
+    <view slot='modalContent'>
+      <view class="editArea">
+        <block wx:for='{{jobSalaryNode}}' wx:key='jobSalary' wx:for-item='item_salary' wx:for-index='idx_salary'>
+          <text class="expIten {{salaryId == item_salary.typeId?'selected':''}}" data-typeId='{{item_salary.typeId}}' data-text='{{item_salary.typeName}}' bindtap="selectedSalary">{{item_salary.typeName}}</text>
+        </block>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitJobSalary">提交</button>
+      </view>
+    </view>
+  </modal>
+
+  <modal id='editJobIntro' fadeStyle='slideDown' height='310px'>
+    <view slot='modalName'>
+      <text>职位描述</text>
+    </view>
+    <view slot='modalContent'>
+      <view class="editArea">
+        <textarea class="weui-textarea" bindinput="inputJobIntro" maxlength='50'></textarea>
+        <view class="weui-textarea-counter {{isMax == true?'maxLength':''}}">{{jobIntroLenght}}/50</view>
+        <view class="weui-btn-area">
+          <button type="primary" class="weui-btn" bindtap="submitJobIntro">提交</button>
+        </view>
+      </view>
+    </view>
+  </modal>
+</view>

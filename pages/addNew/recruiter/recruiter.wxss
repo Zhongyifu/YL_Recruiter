@@ -1,0 +1,72 @@
+/* pages/addNew/recruiter/recruiter.wxss */
+
+.page_hd {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.chooseHP {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.page_hd text {
+  margin-top: 10xp;
+}
+
+.chooseHP image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.chooseSex radio:last-child {
+  margin-left: 20px;
+}
+
+.page_bd {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.page_bd .weui-cell__bd {
+  padding-left: 5px;
+}
+
+.birthday {
+  padding: 5px;
+}
+
+.btnArea {
+  position: fixed;
+  bottom: 20px;
+  width: 90%;
+}
+
+/* 弹窗 */
+
+.profile .weui-cell__bd {
+  margin-left: 80px;
+}
+
+.profile .weui-cell__hd {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+}
+
+.profile {
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+}
+
+.submitArea {
+  margin-top: 10px;
+}

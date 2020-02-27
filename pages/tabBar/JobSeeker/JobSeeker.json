@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "seachModal": "/components/selectSearch/selectSearch"
+  },
+  "navigationBarTitleText":"精英列表"
+}

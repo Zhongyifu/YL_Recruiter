@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "select-modal": "/components/modal/modal"
+  },
+  "navigationBarTitleText": "职位管理"
+}

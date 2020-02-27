@@ -1,0 +1,113 @@
+/* pages/information/myInfo/myInfo.wxss */
+
+.page_hd {
+  /* font-family: 'SimHei'; */
+  box-sizing: border-box;
+  background-color: #1f82b9;
+}
+
+.infoArea {
+  padding: 45rpx 0;
+}
+
+.infoArea .myName {
+  width: 65%;
+}
+
+.infoArea .myName text {
+  color: #fff;
+  padding-left: 60rpx;
+}
+
+.infoArea .myName .myNameStr {
+  font-size: 20pt;
+}
+
+.infoArea .myName navigator {
+  color: #fff;
+  font-size: 10pt;
+  padding-left: 60rpx;
+}
+
+.infoArea .myheadP {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.infoArea .myheadP image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1xp solid #fff;
+}
+
+/* 中部 */
+
+.page_bd {
+  /* font-family: 'KaiTi'; */
+  background-color: #f0f0f0;
+}
+
+.statistics {
+  margin-bottom: 30rpx;
+  background-color: #fff;
+}
+
+.statistics .data-item {
+  width: 33%;
+  height: 110rpx;
+  text-align: center;
+}
+
+.data-item text {
+  line-height: 110rpx;
+}
+
+.data-item text:last-child {
+  margin-left: 30rpx;
+}
+
+/* 功能项 */
+
+.functions {
+  background-color: #fff;
+}
+
+.functions .functuon-item icon {
+  vertical-align: inherit;
+  margin-right: 20rpx;
+  font-size: 14pt;
+}
+
+.functions .functuon-item {
+  padding: 20rpx;
+  /* padding-left: 50rpx; */
+  border-bottom: 1px solid #ddd;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.functions .functuon-item .item-rIcon {
+  color: #1f82b9;
+  font-weight: 600;
+  float: right;
+  line-height: 75rpx;
+  margin-right: 20rpx;
+}
+
+.page_foot{
+  position: absolute;
+  bottom: 45rpx;
+  width: 100%;
+  text-align: center;
+}
+.page_foot text:first-child{
+  float: left;
+  font-size: 10pt;
+  margin-left: 40rpx;
+}
+.page_foot text:last-child{
+  float: right;
+  font-size: 10pt;
+  margin-right: 40rpx;
+}

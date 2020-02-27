@@ -1,0 +1,59 @@
+<!--pages/tabBarInfo/myJobList/myJobList.wxml-->
+<view class="page">
+  <view class="searchArea">
+    <button bindtap="selectSearch">全部
+      <icon class="iconfont {{selected?'icon-arrowdown':'icon-arrowTop'}}"></icon>
+    </button>
+    <block wx:if="{{selected}}">
+      <view class="selectItem">
+        <block wx:for="{{itemList}}" wx:key='itemList' wx:for-item='itemName'>
+          <view class="item {{itemName.selected?'selected':''}}" bindtap="selectFun" data-id='{{itemName.id}}'>{{itemName.name}}</view>
+        </block>
+      </view>
+    </block>
+  </view>
+
+  <view class="page_bd">
+    <view class="section">
+
+      <view class="section_item" bindtap="showMoreInfo" data-id='jobId'>
+        <view class="left-item">
+          <view class="mainInfo">
+            <text>WEB前端开发工程师</text>
+            <text>13K - 16K</text>
+          </view>
+          <view class="minorInfo">
+            <text>地点\t·\t地点</text>
+            <text>学历</text>
+            <text>工作经验</text>
+          </view>
+        </view>
+        <view class="item_right">
+          <icon class="iconfont icon-youjiantou" bindtap="updateUserSex"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view class="left-item">
+          <view class="mainInfo">
+            <text>职位名称</text>
+            <text>薪资</text>
+          </view>
+          <view class="minorInfo">
+            <text>地点\t·\t地点</text>
+            <text>学历</text>
+            <text>工作经验</text>
+          </view>
+        </view>
+        <view class="item_right">
+          <icon class="iconfont icon-youjiantou" bindtap="updateUserSex"></icon>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="page_ft pageFixBtn">
+    <button bindtap="addNewJob">发布职位</button>
+  </view>
+</view>

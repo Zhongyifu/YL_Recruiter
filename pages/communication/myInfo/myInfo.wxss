@@ -1,0 +1,20 @@
+.section .user_profile .item_left {
+  line-height: 150rpx;
+}
+
+.section .user_profile .iconfont {
+  line-height: 150rpx;
+}
+
+.section .user_profile image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  float: left;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+}
+
+.user_profile .iconfont {
+  line-height: 150rpx !important;
+}

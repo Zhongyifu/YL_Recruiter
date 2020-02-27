@@ -1,0 +1,182 @@
+<!--pages/addNew/recruiter/recruiter.wxml-->
+<!-- 创建招聘这名片 -->
+<view class="page {{isModalShow==true?'stopScroll':''}}" >
+
+  <view class="page_hd">
+    <view class="chooseHP" bindtap="chooseHP">
+      <image src='{{hR_HP}}' mode="scaleToFill"></image>
+    </view>
+    <view class="chooseSex">
+      <radio-group class="radio-group" bindchange="chooseSex" name='userSex'>
+        <label class="radio">
+          <radio value="男"  checked="{{cheackSex=='男'?true:false}}">男</radio>
+          <radio value="女"  checked="{{cheackSex=='女'?true:false}}">女</radio>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="page_bd">
+    <form bindsubmit="userInfoFomr">
+      <!-- 姓名 -->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          姓名：
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" maxlength="5" name='userName' confirm-type='next' placeholder='请填写'></input>
+        </view>
+      </view>
+
+      <!-- 出生年月 -->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          生日：
+        </view>
+        <view class="weui-cell__bd birthday">
+          <picker mode='date' fields='day' value="{{userBirthady}}" start='{{birthday_staty}}' end='{{birthday_end}}' bindchange="chooseBirthady">
+            <block wx:if="{{isBirthday}}">
+              <text>{{userBirthady}}</text>
+            </block>
+            <block wx:else>
+              <text class="gray">请选择</text>
+            </block>
+          </picker>
+        </view>
+      </view>
+
+      <!-- 邮箱 -->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          邮箱：
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='userEmail' confirm-type='next' placeholder='请填写'></input>
+        </view>
+      </view>
+
+      <!-- 手机号码 -->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          手机号码：
+        </view>
+        <view class="weui-cell__bd">
+          <input type='number' maxlength="11" class="weui-input" name='userPhone' confirm-type='next' placeholder='请填写'></input>
+        </view>
+      </view>
+
+      <!-- 现在的职位 -->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          现任职位：
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='userJob' confirm-type='next' placeholder='请填写'></input>
+        </view>
+      </view>
+
+      <!-- 现在任职的公司 -->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          任职公司：
+        </view>
+        <view class="weui-cell__bd" bindtap="chooseCompany">
+          <block wx:if='{{isCompany}}'>
+            <text>{{companyName}}</text>
+          </block>
+          <block wx:else>
+            <text class="gray">请填写</text>
+          </block>
+        </view>
+      </view>
+      
+      <!-- 按钮 -->
+      <view class="btnArea">
+        <button type="primary" form-type="submit">完成</button>
+      </view>
+    </form>
+  </view>
+
+</view>
+
+
+
+
+<view class="search-modal">
+  <input-modal id="modal_Company" fadeStyle="slideDown" height="480px;" bindMeeage='close_Company'>
+    <view slot='modalName'>
+      <text>公司信息</text>
+    </view>
+    <view slot="modalContent">
+      <view class="companyInfo">
+        <form bindsubmit="companyInfoForm">
+          <!-- 名称 -->
+          <view class="weui-cell">
+            <view class="weui-cell__hd">
+              公司全称：
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" placeholder="请填写" name='companyName'></input>
+            </view>
+          </view>
+          <!-- 公司行业 -->
+          <view class="weui-cell">
+            <view class="weui-cell__hd">
+              公司行业：
+            </view>
+            <view class="weui-cell__bd" bindtap="chooseIndustry">
+              <block wx:if='{{indChectStatus}}'>
+                <text>{{indText}}</text>
+              </block>
+              <block wx:else>
+                <text class="gray">请填写</text>
+              </block>
+            </view>
+          </view>
+          <!-- 公司规模 -->
+          <view class="weui-cell">
+            <view class="weui-cell__hd">
+              公司规模：
+            </view>
+            <view class="weui-cell__bd">
+              <picker range="{{companyScopes}}" range-key="typeName" value="{{scopeIdx}}" data-id="{{companyScopes[scopeIdx].typeId}}" bindchange="chooseScope">
+                <block wx:if='{{isScope}}'>
+                  <text>{{companyScopes[scopeIdx].typeName}}</text>
+                </block>
+                <block wx:else>
+                  <text class="gray">请填写</text>
+                </block>
+              </picker>
+            </view>
+          </view>
+          <!-- 简介 -->
+          <view class="weui-cell profile">
+            <view class="weui-cell__hd">
+              公司简介：
+            </view>
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" name='comanyProfile' placeholder="请填写" placeholder-class="placeCss"></textarea>
+            </view>
+          </view>
+          <!-- 按钮 -->
+          <view class="submitArea">
+            <button type="primary" form-type="submit">保存</button>
+          </view>
+        </form>
+      </view>
+    </view>
+  </input-modal>
+
+  <input-modal id='modal_Industry' fadeStyle="slideDown" height="480px;">
+    <view slot='modalName'>
+      <text>全部行业</text>
+    </view>
+    <view slot="modalContent" >
+      <view class="indList" style="height:400px;overflow: scroll;">
+        <block wx:for='{{industryList}}' wx:for-item='item' wx:key='industry'>
+          <text class='list-item {{indCheck==item.typeId?"selected":""}}' data-text='{{item.typeName}}' data-id='{{item.typeId}}' bindtap='submit_Industry'>{{item.typeName}}</text>
+        </block>
+      </view>
+    </view>
+  </input-modal>
+</view>

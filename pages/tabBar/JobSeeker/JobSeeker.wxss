@@ -1,0 +1,122 @@
+/* pages/tabBar/JobSeeker/JobSeeker.wxss */
+
+view {
+  box-sizing: border-box;
+}
+
+.page_hd .classify {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.page_hd .classify .classifyItem {
+  border-right: 1px solid #ccc;
+  width: 33%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.page_hd .classify .classifyItem:last-child {
+  border: 0px;
+}
+
+.page_bd .reslutItem {
+  color: #404040;
+  background-color: #fff;
+  height: 215rpx;
+  margin-bottom: 20rpx;
+  padding: 10rpx 30rpx;
+}
+
+.salary {
+  color: #1f82b9;
+  float: right;
+}
+
+.reslutItem .seekerInfo text {
+  font-size: 12pt;
+  display: inline-block;
+  margin: 0rpx 10rpx;
+}
+
+.reslutItem .jobInfo text {
+  font-size: 13pt;
+  font-weight: 600;
+}
+
+.reslutItem .centerView {
+  margin: 10rpx 0rpx;
+}
+
+.skillList {
+  display: inline-block;
+}
+
+.reslutItem .skillList text {
+  display: inline-block;
+  border: 1px solid #1f82b9;
+  font-size: 9pt;
+  margin: 10rpx 15rpx;
+  padding: 5rpx 10rpx;
+}
+
+.mymodal-content .modalItem {
+  padding: 10rpx;
+}
+
+.select-modal .editArea {
+  max-height: 380px;
+  overflow-y: scroll;
+}
+
+.select-modal .weui-btn-area {
+  margin-top: 10rpx;
+}
+
+.select-modal .jobTypeItem {
+  padding: 15rpx 0rpx;
+  border-bottom: 1px solid #eee;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.select-modal .jobTypeItem .itemOne {
+  color: #1f82b9;
+}
+
+.select-modal .jobTypeItem .itemTwo {
+  color: #179b16;
+}
+
+.select-modal .jobTypeItem .itemThree {
+  color: #404040;
+  display: inline-block;
+  padding: 5rpx 10rpx;
+  margin-right: 20rpx;
+  margin-bottom: 15rpx;
+  margin-top: 10rpx;
+  border: 1px solid #ccc;
+  font-size: 11pt;
+}
+
+.select-modal .jobTypeItem:last-child {
+  border-bottom: 0rpx;
+}
+
+.itemList .searchItem {
+  display: inline-block;
+  margin: 10rpx;
+  padding: 0rpx 10rpx;
+}
+
+.selectSearch--mask {
+  top: 118px !important;
+}
+
+.selectSearch--mymodal {
+   top: 110px !important;
+}

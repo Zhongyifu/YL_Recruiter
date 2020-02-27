@@ -1,0 +1,4 @@
+{
+  "usingComponents": {"select-modal": "/components/modal/modal"},
+  "navigationBarTitleText": "个人实名认证"
+}

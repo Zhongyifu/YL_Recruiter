@@ -1,0 +1,98 @@
+/* components/mapPage/mapPage.wxss */
+
+.page_hd {
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.left-text {
+    width: 23%;
+    line-height: 100rpx;
+    padding: 0rpx 15rpx;
+}
+
+.right-input {
+    width: 78%;
+}
+
+.right-input input {
+    width: 90%;
+    padding: 10rpx;
+    padding-left: 20rpx;
+    background-color: #ebebeb;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.chooseAddress {
+    display: flex;
+    height: 100rpx;
+    width: 100vw;
+
+}
+
+.chooseAddress .left-text {
+    text-align: right;
+}
+
+.setLocation .right-input {
+    width: 56% !important;
+}
+
+.setLocation .setBtn {
+    line-height: 90rpx;
+    height: 90rpx;
+}
+
+.setLocation .setBtn button {
+    display: inline-block;
+    font-size: 10pt;
+    vertical-align: middle;
+}
+
+.search-modal .dataList {
+    overflow-y: scroll;
+}
+.search-modal .province{
+    height: 600rpx;
+}
+.search-modal .city{
+    height: 410rpx;
+}
+
+.search-modal .addressItem {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 10rpx;
+    margin-right: 30rpx;
+    margin-bottom: 15rpx;
+}
+
+.search-modal .submitArea {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.search-modal .submitArea view {
+    width: 50%;
+    box-sizing: border-box;
+    color: #40b475;
+    padding: 20rpx 0rpx;
+    text-align: center;
+}
+
+.search-modal .submitArea view:first-child {
+    border-right: 1px solid #40b475;
+    color: #404040;
+}
+
+.page_bd map {
+    width: 100vw;
+    height: 800rpx;
+    /* padding-top: 20rpx; */
+}
+
+.pageFixBtn {
+    position: fixed;
+}

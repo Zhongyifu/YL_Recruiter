@@ -1,0 +1,60 @@
+<!--pages/authentication/person/person.wxml-->
+<view class="page">
+  <view class="page_bd">
+    <view class="section">
+      <view class="section_item">
+        <view>
+          <text class="item_left">真实姓名</text>
+        </view>
+        <view class="item_right">
+          <text>{{userRealName}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateUserRealName"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">证件号码</text>
+        </view>
+        <view class="item_right">
+          <text>{{userIdNumber}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateUserIdNumber"></icon>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="page_ft pageFixBtn">
+    <button bindtap="nextPage">下一步</button>
+  </view>
+</view>
+
+<view class="select-modal">
+  <select-modal id="editUserRealName" fadeStyle="slideDown" height="175px;" bindMeeage='close_userRealName'>
+    <view slot="modalName">
+      <text>真实姓名</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <input class="weui-input" value="{{userRealName}}" bindinput="editInput_userRealName" confirm-type="done"></input>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitUserRealName">提交</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="editUserIdNumber" fadeStyle="slideDown" height="175px;" bindMeeage='close_userIdNumber'>
+    <view slot="modalName">
+      <text>证件号码</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <input class="weui-input" value="{{userIdNumber}}" bindinput="editInput_userIdNumber" confirm-type="done"></input>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitUserIdNumber">确定使用</button>
+      </view>
+    </view>
+  </select-modal>
+</view>

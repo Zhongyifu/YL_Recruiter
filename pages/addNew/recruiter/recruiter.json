@@ -1,0 +1,4 @@
+{
+  "usingComponents": {"input-modal": "/components/modal/modal"},
+  "navigationBarTitleText": "新建HR名片"
+}

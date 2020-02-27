@@ -1,0 +1,94 @@
+<!-- components/mapPage/mapPage.wxml -->
+<view class="page">
+    <view class="page_hd">
+        <view class="chooseAddress">
+            <view class="left-text">省：</view>
+            <view class="right-input" bindtap="chooseProvince">
+                <input class='weui-input' value="{{pValue}}"></input>
+            </view>
+        </view>
+        <view class="chooseAddress">
+            <view class="left-text">市：</view>
+            <view class="right-input" bindtap="chooseCity">
+                <input class='weui-input' value="{{cValue}}"></input>
+            </view>
+        </view>
+        <view class="chooseAddress">
+            <view class="left-text">区：</view>
+            <view class="right-input" bindtap="chooseDistrict">
+                <input class='weui-input' value="{{dValue}}"></input>
+            </view>
+        </view>
+        <view class="chooseAddress setLocation">
+            <view class="left-text" style="margin-left:-5rpx">具体地址：</view>
+            <view class="right-input">
+                <input class='weui-input' bindinput="inputSupplement"></input>
+            </view>
+            <view class="setBtn">
+                <button bindtap='setLocation'>验证</button>
+            </view>
+        </view>
+    </view>
+    <view class="page_bd">
+        <map id="companyAddress" name="companyAddress" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"></map>
+    </view>
+    <view class="page_ft pageFixBtn">
+        <button bindtap="completeBtn">完成</button>
+    </view>
+</view>
+<view class="search-modal">
+    <modal id="provinceModal" fadeStyle='slideDown' height='440px'>
+        <view slot='modalName'>
+            <text>选择所在省</text>
+        </view>
+        <view slot="modalContent">
+            <view class="dataList province">
+                <block wx:for="{{provinceData}}" wx:key="province" wx:for-item="item">
+                    <view class="addressItem {{pid == item.provinceId?'selected':'' }}" data-ptext='{{item.provinceName}}' data-pid="{{item.provinceId}}" bindtap='selectProvince'>
+                        {{item.provinceName}}
+                    </view>
+                </block>
+            </view>
+            <view class="submitArea">
+                <view bindtap="cancelProvince">取消</view>
+                <view bindtap="submitProvince">确定</view>
+            </view>
+        </view>
+    </modal>
+    <modal id="cityModal" fadeStyle='slideDown' height='330px'>
+        <view slot='modalName'>
+            <text>选择所在市</text>
+        </view>
+        <view slot="modalContent">
+            <view class="dataList city">
+                <block wx:for="{{cityData}}" wx:key="city" wx:for-item="item">
+                    <view class="addressItem {{ cid == item.cityId?'selected':'' }}" data-ctext='{{item.cityName}}' data-cid="{{item.cityId}}" bindtap='selectCity'>
+                        {{item.cityName}}
+                    </view>
+                </block>
+            </view>
+            <view class="submitArea">
+                <view bindtap="cancelCity">取消</view>
+                <view bindtap="submitCity">确定</view>
+            </view>
+        </view>
+    </modal>
+    <modal id="districtModal" fadeStyle='slideDown' height='330px'>
+        <view slot='modalName'>
+            <text>选择所在区市</text>
+        </view>
+        <view slot="modalContent">
+            <view class="dataList city">
+                <block wx:for="{{districtData}}" wx:key="district" wx:for-item="item">
+                    <view class="addressItem {{ did == item.districtId?'selected':'' }}" data-dtext="{{item.districtName}}" data-did="{{item.districtId}}" bindtap='selectDistrict'>
+                        {{item.districtName}}
+                    </view>
+                </block>
+            </view>
+            <view class="submitArea">
+                <view bindtap="cancelDistrict">取消</view>
+                <view bindtap="submitDistrict">确定</view>
+            </view>
+        </view>
+    </modal>
+</view>

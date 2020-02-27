@@ -1,0 +1,157 @@
+.page {
+  background-color: #fff;
+}
+
+.page_bd {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.section:first-child {
+  border: 0px;
+  margin-bottom: 0rpx;
+}
+
+.section:last-child {
+  border: 0rpx;
+}
+
+.comprofile {
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 25rpx;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+  margin-left: 0rpx;
+}
+
+.comprofile image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.comInfo .mainInfo {
+  /* font-weight: 600; */
+  font-size: 20pt;
+  color: #404040;
+}
+
+.comInfo .auxiliaryInfo {
+  font-family: 'KaiTi';
+  font-size: 11pt;
+  color: #404040;
+}
+
+.basicInfo view {
+  width: 33%;
+  margin: 15rpx 0rpx;
+}
+
+.basicInfo view text {
+  font-size: 10pt;
+  font-family: 'KaiTi';
+}
+
+.basicInfo view icon {
+  margin-right: 10rpx;
+  vertical-align: initial;
+}
+
+.welfareList {
+  padding-bottom: 10rpx;
+}
+
+.section .welfareItem {
+  border-radius: 5rpx;
+  background-color: #d2e6f1;
+  width: 175rpx;
+  height: 65rpx;
+  text-align: center;
+  padding: 5rpx 15rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.welfareItem text {
+  line-height: 65rpx;
+  font-size: 11pt;
+}
+
+.welfareItem icon {
+  font-size: 14pt;
+  margin-right: 15rpx;
+}
+
+.companyInt-title {
+  /* company introduction */
+  display: inline-block;
+  font-size: 14pt;
+  color: #404040;
+}
+
+.companyInt-content {
+  font-size: 9pt;
+}
+
+.companyInt-photo {
+  height: 200rpx;
+  padding: 10rpx 0rpx;
+  width: 100%;
+  display: flex; /* 水平滚动 */
+  white-space: nowrap;
+  padding-bottom: 30rpx;
+}
+
+.companyInt-photo view {
+  width: 200rpx;
+  height: 200rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.companyInt-photo view image {
+  width: 100%;
+  height: 100%;
+}
+
+.companyAddress {
+  width: 100%;
+  height: 350rpx;
+  margin-bottom: 30rpx;
+}
+
+.section navigator {
+  padding-bottom: 20rpx;
+}
+
+.AICItem {
+  font-family: 'KaiTi';
+  color: #404040;
+  padding: 20rpx 0rpx;
+  /* border-bottom: 1px solid #eee; */
+}
+
+.AICItem .inRight {
+  margin-left: auto;
+}
+
+.AICInfo .showMore {
+  text-align: right;
+}
+
+.AICInfo .allInfo {
+  height: 100%;
+}
+
+.AICInfo .hiddenInfo {
+  height: 275rpx;
+  overflow-y: hidden;
+}

@@ -1,0 +1,67 @@
+<!--pages/information/myInfo/myInfo.wxml-->
+<view class="page">
+  <view class="page_hd">
+    <view class="yl-row infoArea">
+      <view class="myName">
+        <text class="myNameStr">{{userName}}</text>
+        <view>
+          <navigator url="../../communication/myInfo/myInfo">个人主页 ></navigator>
+        </view>
+      </view>
+      <view class="myheadP">
+        <image src="{{userHeadPortrait}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="page_bd">
+    <!-- 中部 -->
+    <view class="yl-row statistics">
+      <view class="data-item" bindtap="goToLableA">
+        <text>{{labebA}}</text>
+        <text>沟通过</text>
+      </view>
+      <view class="data-item" bindtap="goToLableB">
+        <text>{{labebB}}</text>
+        <text>面试</text>
+      </view>
+      <view class="data-item" bindtap="goToLableC">
+        <text>{{labebC}}</text>
+        <text>收藏</text>
+      </view>
+    </view>
+    <!-- 功能项 -->
+    <view class="functions">
+      <view class="functuon-item">
+        <icon class="iconfont icon-gongwenbao"></icon>
+        <text>职位管理</text>
+        <icon class="iconfont icon-youjiantou item-rIcon"></icon>
+      </view>
+      <view class="functuon-item" bindtap="toMyInfo">
+        <icon class="iconfont icon-gerenzhongxin"></icon>
+        <text>个人信息</text>
+        <icon class="iconfont icon-youjiantou item-rIcon"></icon>
+      </view>
+      <view class="functuon-item">
+        <icon class="iconfont icon-dalou1"></icon>
+        <text>公司主页</text>
+        <icon class="iconfont icon-youjiantou item-rIcon"></icon>
+      </view>
+      <view class="functuon-item">
+        <icon class="iconfont icon-bangzhu"></icon>
+        <text>帮助与反馈</text>
+        <icon class="iconfont icon-youjiantou item-rIcon"></icon>
+      </view>
+      <view class="functuon-item" bindtap="toSetting">
+        <icon class="iconfont icon-shezhi"></icon>
+        <text>设置</text>
+        <icon class="iconfont icon-youjiantou item-rIcon"></icon>
+      </view>
+    </view>
+  </view>
+
+  <view class="page_foot">
+    <text>客服电话：010-12345678</text>
+    <text>工作时间：09:00 - 18:00</text>
+  </view>
+</view>

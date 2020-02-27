@@ -1,0 +1,120 @@
+<view class='page'>
+  <view class="page_bd">
+    <!-- logo -->
+    <view class="section yl-row">
+      <view class="comprofile">
+        <image src="{{dataJson.companyPhotoUrl}}"></image>
+      </view>
+      <view class="comInfo">
+        <view>
+          <text class="mainInfo">{{dataJson.companyAbbreviation}}</text>
+        </view>
+        <view>
+          <text class="auxiliaryInfo">{{dataJson.isListedCompanies}}</text>
+          <text class="text_dot">·</text>
+          <text class="auxiliaryInfo">{{dataJson.companySizeTypeName}}</text>
+          <text class="text_dot">·</text>
+          <text class="auxiliaryInfo">{{dataJson.companyTradeTypeName}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section yl-row basicInfo">
+      <view style="text-align:left">
+        <icon class="iconfont icon-clock"></icon>
+        <text>{{dataJson.startWorkTime}} - {{dataJson.endWorkTime}}</text>
+      </view>
+      <view style="text-align:center">
+        <icon class="iconfont icon-calendar"></icon>
+        <text>{{dataJson.restTimeTypeName}}</text>
+      </view>
+      <view style="text-align:right">
+        <icon class="iconfont icon-gongwenbao"></icon>
+        <text>{{dataJson.restTimeTypeName}}</text>
+      </view>
+    </view>
+
+    <view class="section welfareList">
+      <block wx:for='{{dataJson.companyWelfareList}}' wx:key='welfare' wx:for-item='item'>
+
+        <view class="welfareItem">
+          <icon class="iconfont icon-{{item.labelIcon}}"></icon>
+          <text>{{item.labelName}}</text>
+        </view>
+
+      </block>
+    </view>
+
+    <view class="section ">
+      <text class="companyInt-title">公司介绍</text>
+      <view class="companyInt-content {{isHidden.status?'hiddenText':''}}">
+        {{dataJson.companyIntroduction}}
+      </view>
+      <view class="showMore" bindtap="showMore">{{isHidden.btnText}}</view>
+    </view>
+
+    <view class="section">
+      <text class="companyInt-title">公司相册</text>
+      
+        <scroll-view class="companyInt-photo" scroll-x='true'>
+          <block wx:for='{{dateJson.photoList}}' wx:key='photoArry' wx:for-item='photo'>
+            <view>
+              <image src="{{photo.photoUrl}}" data-src="{{photo.photoUrl}}" bindtap="previewImage"></image>
+            </view>
+          </block>
+        </scroll-view>
+      
+    </view>
+
+    <view class="section">
+      <text class="companyInt-title">公司地址</text>
+      <view class="companyInt-map">
+        <map id="companyAddress" class="companyAddress" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"></map>
+      </view>
+    </view>
+
+    <view class="section">
+      <text class="companyInt-title">公司官网</text>
+      <view style="padding-bottom:10rpx">{{dataJson.companyWebsite}}</view>
+    </view>
+
+    <view class="section AICInfo">
+      <text class="companyInt-title">工商信息</text>
+      <view class="{{isAICHidden.status?'hiddenInfo':'allInfo'}}">
+
+        <view class="AICItem yl-row">
+          <view>公司全称</view>
+          <view class="inRight">{{dataJson.companyFullName}}</view>
+        </view>
+
+        <view class="AICItem yl-row">
+          <view>公司全称</view>
+          <view class="inRight">公司全称公司全称</view>
+        </view>
+
+        <view class="AICItem yl-row">
+          <view>公司全称</view>
+          <view class="inRight">公司全称公司全称</view>
+        </view>
+
+        <view class="AICItem yl-row">
+          <view>公司全称</view>
+          <view class="inRight">公司全称公司全称</view>
+        </view>
+
+        <view class="AICItem yl-row">
+          <view>公司全称</view>
+          <view class="inRight">公司全称公司全称</view>
+        </view>
+
+        <view class="AICItem yl-row">
+          <view>公司全称</view>
+          <view class="inRight">公司全称公司全称</view>
+        </view>
+        
+      </view>
+      <view class="showMore" bindtap="showAllAICinfo">{{isAICHidden.btnText}}</view>
+    </view>
+
+  </view>
+</view>

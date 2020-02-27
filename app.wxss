@@ -1,0 +1,581 @@
+@import "weui.wxss";
+
+/* important */
+
+page {
+  height: 100%;
+}
+
+.page {
+  box-sizing: border-box;
+  background-color: #eee;
+  height: 100%;
+  position: relative;
+}
+
+.search_hd {
+  position: fixed;
+  width: 100%;
+}
+
+.search_bd {
+  padding-top: 195rpx;
+}
+
+/* 底部 文字 */
+
+.page_ft {
+  width: 100%;
+  margin-top: 30rpx;
+  /* margin-bottom: 30rpx; */
+  color: #999;
+  text-align: center;
+}
+
+.page_ft text:nth-child(2) {
+  font-size: 12pt;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+/* 防止页面在有弹出层时滚动 */
+
+.stopScroll {
+  position: fixed;
+}
+
+/* common */
+
+.weui-cells {
+  background-color: #f6f8f8;
+}
+
+.text_dot {
+  font-size: 11pt;
+  color: #666;
+  margin: 0rpx 8rpx;
+}
+
+.position {
+  position: relative;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.placeCss {
+  color: #ccc;
+}
+
+.selected {
+  background-color: #199ed8 !important;
+  color: #fff !important;
+}
+
+.list-item {
+  display: block;
+  float: left;
+  border: 1px solid #199ed8;
+  font-size: 14px;
+  padding: 7px 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.mymodal {
+  top: 10%;
+  left: 20px;
+  width: 90%;
+}
+
+/* 点击查看更多的提示文字 */
+
+.showMore {
+  color: #196a99;
+  font-size: 11pt;
+  margin-top: 5rpx;
+  margin-bottom: 10rpx;
+}
+
+.hiddenText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* 栅格 */
+
+.yl-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+.yl-col-6 {
+  width: 75%;
+}
+
+.yl-col-4 {
+  width: 25%;
+}
+
+.yl-fgrow2 {
+  flex-grow: 2;
+}
+
+.yl-fgrow1 {
+  flex-grow: 1;
+}
+
+/* 位于顶部的错误信息提示层 */
+
+.errorView {
+  background-color: #e64340;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.errorView text {
+  line-height: 30px;
+}
+
+.bluePoint {
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  color: #199ed8;
+  font-size: 10px;
+}
+
+/* 顶部搜索框 */
+
+.searchArea {
+  position: relative;
+  background-color: #1f82b9;
+  height: 110rpx;
+}
+
+.searchArea input {
+  width: 58%;
+  height: 65rpx;
+  padding-left: 25rpx;
+  border-radius: 30rpx 0rpx 0rpx 30rpx;
+  background-color: #fff;
+  position: absolute;
+  top: 20rpx;
+  left: 105rpx;
+}
+
+.searchArea .borderView {
+  border-left: 1px solid #ccc;
+  width: 0rpx;
+  height: 55rpx;
+  position: absolute;
+  top: 25rpx;
+  right: 200rpx;
+  z-index: 3;
+}
+
+.searchArea .serchBtn {
+  width: 100rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  border-radius: 0px 30rpx 30rpx 0px;
+  background-color: #fff;
+  position: absolute;
+  top: 20rpx;
+  right: 104rpx;
+  z-index: 2;
+}
+
+.searchArea button::after {
+  border-radius: 0px;
+  border: 0px;
+}
+
+.searchArea button icon {
+  font-size: 21px;
+  vertical-align: inherit;
+}
+
+/* 中间部分公共样式 */
+
+.section {
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+
+.section .section_item {
+  display: flex;
+  width: 85%;
+  min-height: 100rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.section .section_item:last-child {
+  border-bottom: 0px;
+}
+
+.section .section_item .item_left {
+  line-height: 130rpx;
+  color: #404040;
+}
+
+.hasAuxiliary .item_left {
+  display: block;
+  padding-top: 25rpx;
+  line-height: 40rpx !important;
+}
+
+.section .section_item .auxiliary {
+  font-size: 8pt;
+  color: #888;
+}
+
+.section .section_item .item_right {
+  margin-left: auto;
+  color: #999;
+  max-width: 470rpx;
+}
+
+.section .section_item .item_right text {
+  margin-right: 15rpx;
+  line-height: 130rpx;
+}
+
+.section .section_item .item_right icon {
+  /* line-height: 110rpx; */
+  line-height: 130rpx;
+}
+
+.section .section_item .item_right switch {
+  line-height: 130rpx;
+}
+
+.longtext text {
+  display: block;
+  width: 300rpx;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.longtext icon {
+  float: right;
+  line-height: 130rpx;
+}
+
+/* 悬浮于底部的按钮 */
+
+.pageFixBtn {
+  width: 100%;
+  bottom: 0rpx;
+  left: 0rpx;
+  padding: 35rpx 0rpx;
+  background-color: #fff;
+}
+
+.pageFixBtn button {
+  background-color: #1f82b9;
+  color: #fff;
+  width: 75%;
+}
+
+/* select-modal:弹窗的最外层 */
+
+.select-item {
+  display: block;
+  float: left;
+  border: 1px solid #199ed8;
+  font-size: 14px;
+  padding: 7px 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.select-modal .itemView {
+  height: 311px;
+  overflow: scroll;
+}
+
+.select-modal .comfirmDate {
+  text-align: center;
+  height: 50px;
+  display: fixed;
+  position: absolute;
+  bottom: 0px;
+  width: 90%;
+  background: white;
+  border-top: 1px solid #ccc;
+}
+
+.select-modal .comfirmDate view {
+  width: 50%;
+}
+
+.select-modal .cancel {
+  float: left;
+  border-right: 1px solid #ccc;
+}
+
+.select-modal .comfirm {
+  color: #5ac459;
+}
+
+.select-modal .editArea {
+  overflow-y: scroll;
+}
+
+.select-modal .editArea input {
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid #ccc;
+  /* padding: 5rpx 10rpx; */
+  padding: 20rpx 10rpx;
+}
+
+.select-modal .weui-btn-area {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 25rpx;
+}
+
+.select-modal .weui-textarea {
+  border: 1px solid #ccc;
+  padding: 20rpx;
+  height: 300rpx;
+  box-sizing: border-box;
+}
+
+.select-modal .weui-label {
+  width: 50rpx;
+}
+
+/* 各个搜索列表的项 */
+
+.searchList {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.searchItem {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.searchItem .searchItem {
+  margin-bottom: 20px;
+}
+
+.searchItem .item-partTop {
+  margin-bottom: 20px;
+}
+
+.searchItem .item-partTop view:first-child {
+  width: 65%;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.searchItem .item-partTop view:last-child {
+  text-align: center;
+  color: #199ed8;
+}
+
+.searchItem .item-partBottom view {
+  font-size: 14px;
+  color: gray;
+  margin-right: 5px;
+}
+
+.searchBText {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* 自定义图标 */
+@font-face {
+  font-family: 'iconfont';  /* project id 1364157 */
+  src: url('//at.alicdn.com/t/font_1364157_hje74l4kagr.eot');
+  src: url('//at.alicdn.com/t/font_1364157_hje74l4kagr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1364157_hje74l4kagr.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1364157_hje74l4kagr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1364157_hje74l4kagr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1364157_hje74l4kagr.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-interview:before {
+  content: "\e615";
+}
+
+.icon-phone:before {
+  content: "\e61e";
+}
+
+.icon-resume:before {
+  content: "\e669";
+}
+
+.icon-wechat:before {
+  content: "\e601";
+}
+
+.icon-bus:before {
+  content: "\e67b";
+}
+
+.icon-gym:before {
+  content: "\e610";
+}
+
+.icon-coupon:before {
+  content: "\e607";
+}
+
+.icon-snacks02:before {
+  content: "\e647";
+}
+
+.icon-vacation:before {
+  content: "\e611";
+}
+
+.icon-tea:before {
+  content: "\e68f";
+}
+
+.icon-calendar:before {
+  content: "\e85d";
+}
+
+.icon-food:before {
+  content: "\e912";
+}
+
+.icon-subsidy:before {
+  content: "\e630";
+}
+
+.icon-promote:before {
+  content: "\e6a6";
+}
+
+.icon-stock:before {
+  content: "\e633";
+}
+
+.icon-clock:before {
+  content: "\e646";
+}
+
+.icon-party:before {
+  content: "\e675";
+}
+
+.icon-shield:before {
+  content: "\e6ec";
+}
+
+.icon-Train:before {
+  content: "\ede9";
+}
+
+.icon-heartbeat:before {
+  content: "\e8f9";
+}
+
+.icon-Medal:before {
+  content: "\e629";
+}
+
+.icon-dividend:before {
+  content: "\e698";
+}
+
+.icon-arrowDown:before {
+  content: "\e632";
+}
+
+.icon-arrowTop:before {
+  content: "\e614";
+}
+
+.icon-uploadImg:before {
+  content: "\e653";
+}
+
+.icon-female:before {
+  content: "\e60f";
+}
+
+.icon-male:before {
+  content: "\e60e";
+}
+
+.icon-search1:before {
+  content: "\e60d";
+}
+
+.icon-youjiantou:before {
+  content: "\e667";
+}
+
+.icon-bangzhu:before {
+  content: "\e600";
+}
+
+.icon-gerenzhongxin:before {
+  content: "\e8e9";
+}
+
+.icon-dalou1:before {
+  content: "\e644";
+}
+
+.icon-shezhi:before {
+  content: "\e771";
+}
+
+.icon-gongwenbao:before {
+  content: "\e74f";
+}
+
+.icon-male {
+  font-weight: 600;
+  color: #07c160;
+}
+
+.icon-female {
+  font-weight: 600;
+  color: #ff5722;
+}
+
+.icon-youjiantou {
+  font-weight: 600;
+  color: #199ed8;
+}

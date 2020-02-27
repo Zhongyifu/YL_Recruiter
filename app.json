@@ -1,0 +1,62 @@
+{
+  "pages": [
+<<<<<<< HEAD
+    "pages/tabBarInfo/messageInfo/messageInfo",
+=======
+    "pages/addNew/mapPage/mapPage",
+    "pages/tabBar/JobSeeker/JobSeeker",
+>>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
+    "pages/tabBar/message/message",
+    "pages/tabBar/JobSeeker/JobSeeker",
+    "pages/tabBar/myInfo/myInfo",
+    "pages/login/login/login",
+    "pages/login/bind/bindUser",
+    "pages/authentication/person/person",
+    "pages/authentication/company/company",
+    "pages/addNew/recruiter/recruiter",
+    "pages/addNew/job/job",
+    "pages/tabBarInfo/companyInfo/companyInfo",
+    "pages/tabBarInfo/applicant/applicant",
+    "pages/tabBarInfo/myJobList/myJobList",
+    "pages/tabBarInfo/comInfo/incomplete",
+    "pages/tabBarInfo/jobInfo/jobInfo",
+    "pages/communication/myInfo/myInfo",
+    "pages/communication/setting/setting",
+    "pages/communication/favorite/favorite",
+    "pages/communication/interview/interview",
+    "pages/communication/communicated/communicated"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/tabBar/JobSeeker/JobSeeker",
+        "text": "精英",
+        "iconPath": "images/tabbar_1.png",
+        "selectedIconPath": "images/tabbar_1s.png"
+      },
+      {
+        "pagePath": "pages/tabBar/message/message",
+        "text": "消息",
+        "iconPath": "images/tabbar_2.png",
+        "selectedIconPath": "images/tabbar_2s.png"
+      },
+      {
+        "pagePath": "pages/tabBar/myInfo/myInfo",
+        "text": "我的",
+        "iconPath": "images/tabbar_3.png",
+        "selectedIconPath": "images/tabbar_3s.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#1f82b9",
+    "navigationBarTitleText": "叶联招聘",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将会用于展示部分信息"
+    }
+  }
+}

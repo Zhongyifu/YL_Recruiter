@@ -1,0 +1,14 @@
+<!--components/treeMenu.wxml-->
+<!--遮罩层-->
+<view class='mask' wx:if="{{showModalStatus}}" bindtap='closeModal' style="opacity:{{opacity}}"></view>
+<view class="treeArea">
+  <view class='tree-title'>
+    <text>{{modalData.text}}</text>
+    <text style='color:#aaa;font-style:normal' bindtap='closeModal'>X</text>
+  </view>
+  <block wx:for='{{modalData.childNode}}' wx:for-index='idx_one' wx:for-item='item_one' wx:key='node_one'>
+    <view class="jobItem">
+      treeMenu
+    </view>
+  </block>
+</view>

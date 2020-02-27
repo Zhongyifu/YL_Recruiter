@@ -1,0 +1,56 @@
+<!-- pages/tabBarInfo/messageInfo/messageInfo.wxml -->
+<view class="page">
+    <view class="page_hd">
+        <view class="seekerInfo">
+            <text>沟通者姓名\n</text>
+            <text>应聘职位</text>
+        </view>
+        <view class="functionArea">
+            <view class="phone">
+                <icon class="iconfont icon-phone" />
+                <view>换手机</view>
+            </view>
+            <view class="wechat">
+                <icon class="iconfont icon-wechat" />
+                <view>换微信</view>
+            </view>
+            <view class="resume">
+                <icon class="iconfont icon-resume" />
+                <view>求简历</view>
+            </view>
+            <view class="interview">
+                <icon class="iconfont icon-interview" />
+                <view>约面试</view>
+            </view>
+        </view>
+    </view>
+    <view class="page_bd">
+        <view class="occupyTop"></view>
+        <view class="content">
+            <!-- 用户自己发出 -->
+            <view class="initiator">
+                <view class="sendContent">
+                    <text>发送的内容</text>
+                </view>
+                <view class="headP">
+                    <image src="../../../images/hP.jpg" />
+                </view>
+            </view>
+            <!-- 对方发出的 -->
+            <view class="receiver"></view>
+        </view>
+        <view class="occupyBottom"></view>
+    </view>
+    <view class="page_foot" style="bottom:{{boardHieght}}px">
+        <view class="easySend">
+            <button>招呼</button>
+        </view>
+        <view class="typingArea">
+            <!-- <textarea placeholder="请输入.."></textarea> -->
+            <textarea placeholder="请输入 ..." maxlength="140" adjust-position="{{false}}" bindfocus="getKeyboardH" bindblur="restKeyboard"></textarea>
+        </view>
+        <view class="sendBtn">
+            <button>发送</button>
+        </view>
+    </view>
+</view>

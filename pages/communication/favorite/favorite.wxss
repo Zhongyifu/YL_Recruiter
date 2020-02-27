@@ -1,0 +1,53 @@
+.page_bd .resItem {
+  height: 155rpx;
+  padding: 5rpx 40rpx;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+
+.resItem_body {
+  display: flex;
+}
+
+.resItem_profile {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 15rpx 0;
+}
+
+.resItem_profile image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.resItem_info {
+  padding-left: 15px;
+  padding-top: 12rpx;
+}
+.resItem_info view{
+  width: 100%;
+  border: 1px solid #fff;
+}
+
+.resItem_info .name {
+  font-size: 17pt;
+  color: #404040;
+}
+
+.resItem_info .iconfont {
+  margin-left: 15rpx;
+  margin-right: 35rpx;
+  font-weight: 600;
+}
+
+.resItem_info .userInfo {
+  font-size: 10pt;
+  color: #666;
+}
+
+.resItem_info .userInfo_dot {
+  font-size: 11pt;
+  color: #666;
+  margin: 0rpx 8rpx;
+}

@@ -1,0 +1,139 @@
+<view class="page">
+  <view class="page_hd">
+    <view class="yl-row appInfo">
+      <view class="appInfo-name">
+        <view>
+          <text>姓名</text>
+        </view>
+        <view class="text-md gray">
+          <text>最近公司</text>-
+          <text>最近职位</text>
+        </view>
+      </view>
+      <view class="appInfo-headP">
+        <image class="sex-icon" src="../../../images/woman.png"></image>
+        <image class="appHp" src="../../../images/Hp.jpg"></image>
+      </view>
+    </view>
+
+    <view class="appMessage">
+      <view class="yl-row message-item">
+        <view class="item-state">
+          <text class="text-lg fontSix">求职状态</text>
+        </view>
+        <view class="item-activity">
+          <text class="text-md gray">今日活跃</text>
+        </view>
+      </view>
+      <view class="yl-row">
+        <view class="item-message">
+          <icon class="iconfont icon-jobExp"></icon>
+          <text>3年</text>
+        </view>
+        <view class="item-message">
+          <icon class="iconfont icon-degree"></icon>
+          <text>大专</text>
+        </view>
+        <view class="item-message">
+          <icon class="iconfont icon-birthday"></icon>
+          <text>2S岁</text>
+        </view>
+      </view>
+      <view class="yl-row">
+        <text class="text-md gray">安眠充满嗯啊哦呢哦女号呢哦是脑色女安搜恶女媕娿怕你</text>
+      </view>
+    </view>
+  </view>
+  <view class="page_bd">
+    <!-- 求职期望 -->
+    <view class="job-expect bd-item">
+      <view class="position">
+        <text class="bluePoint">●</text>
+        <text class="fontSix gray-d text-lg">求职期望</text>
+      </view>
+      <view class="yl-row item-info">
+        <view class="text-md fontSix">
+          <text>行业</text>
+          <text>地点</text>
+        </view>
+        <view>
+          <text class="text-md blue">9000-12000</text>
+        </view>
+      </view>
+      <view>
+        <text class="text-md gray">期望行业</text>
+      </view>
+    </view>
+    <!-- 工作经验 -->
+    <view class="job-exp bd-item">
+      <!-- <block wx:for='{{}}' wx:item='item' wx:key='jobExp'></block> -->
+      <view class="position">
+        <text class="bluePoint">●</text>
+        <text class="fontSix gray-d text-lg">工作经验</text>
+      </view>
+      <view class="yl-row item-info">
+        <view class="text-md fontSix">
+          <text>公司的地址</text>
+        </view>
+        <view>
+          <text class="text-sm gray">2017.05 - 2017.05</text>
+        </view>
+      </view>
+      <view class="job-work">
+        <text class="text-sm">担任的职位</text>
+      </view>
+      <view>
+        <text class="text-sm gray">暗地发哦本阿尔娜娜色男恶女阿尔马森暗色女媕娿am色男僧</text>
+      </view>
+      <view class="job-tag text-sm">
+        <text class="tag-item">HTML</text>
+        <text class="tag-item">HTML</text>
+        <text class="tag-item">HTML</text>
+      </view>
+    </view>
+    <!-- 项目经验 -->
+    <view class="job-project bd-item">
+      <view class="position">
+        <text class="bluePoint">●</text>
+        <text class="fontSix gray-d text-lg">项目经验</text>
+      </view>
+      <view class="yl-row item-info">
+        <view class="text-md fontSix">
+          <text>项目名称</text>
+        </view>
+        <view>
+          <text class="text-sm gray">2017.05 - 2017.05</text>
+        </view>
+      </view>
+      <view class="job-work">
+        <text class="text-sm">担任的职位</text>
+      </view>
+      <view>
+        <text class="text-sm gray">暗地发哦本阿尔娜娜色男恶女阿尔马森暗色女媕娿am色男僧</text>
+      </view>
+    </view>
+    <!-- 教育经验 -->
+    <view class="job-eduExp bd-item">
+      <view class="position">
+        <text class="bluePoint">●</text>
+        <text class="fontSix gray-d text-lg">教育经验</text>
+      </view>
+      <view class="yl-row item-info">
+        <view class="text-md fontSix">
+          <text>学校的地址</text>
+        </view>
+        <view>
+          <text class="text-sm gray">2017.05 - 2017.05</text>
+        </view>
+      </view>
+      <view>
+        <text class="text-sm gray">本科-计算机与科学</text>
+      </view>
+
+    </view>
+    <!-- 沟通按钮 -->
+    <cover-view class="btnArea">
+      <button type="primary">立即沟通</button>
+    </cover-view>
+  </view>
+</view>

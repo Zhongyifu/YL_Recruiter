@@ -1,0 +1,25 @@
+/* pages/communication/setting/setting.wxss */
+
+.loginOut .section_item {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.loginOut text {
+  line-height: 130rpx;
+  color: #ff0101;
+}
+
+.weui-cell:before {
+  border-top: 0rpx;
+}
+
+.greetion .weui-check {
+  position: relative;
+  left: 0rpx;
+}
+
+.userPhone {
+  padding: 20rpx 10rpx !important;
+}

@@ -1,0 +1,88 @@
+/* pages/tabBarInfo/myJobList/myJobList.wxss */
+
+.searchArea {
+  position: relative;
+}
+
+.searchArea button {
+  width: 220rpx;
+  height: 60rpx;
+  font-size: 12pt;
+  line-height: 60rpx;
+  padding-right: 100rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.searchArea .iconfont {
+  position: absolute;
+  font-size: 18pt;
+  line-height: 60rpx;
+  margin-left: 20px;
+}
+
+.selectItem {
+  background-color: #fff;
+  width: 260rpx;
+  border: 1px solid #ccc;
+  margin: 10rpx 0;
+  position: absolute;
+  top: 170rpx;
+  left: 32%;
+  transform: translateY(-50%);
+}
+
+.section {
+  background-color: #eee;
+}
+
+.searchArea .item {
+  border-bottom: 1px solid #ccc;
+  padding: 10rpx 0;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.section .section_item {
+  height: 180rpx;
+  width: 100%;
+  border: 0rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.section .section_item .left-item{
+  margin-left: 60rpx;
+}
+.section .section_item .item_right{
+  margin-right: 60rpx;
+}
+
+.section .section_item .item_right icon {
+  line-height: 180rpx;
+  font-size: 18pt;
+}
+
+.section_item .mainInfo {
+  font-weight: 500;
+  font-size: 13pt;
+  color: #404040;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.section_item .mainInfo text {
+  margin-right: 50rpx;
+}
+
+.section_item .minorInfo {
+  font-size: 11pt;
+  color: #666;
+}
+
+.section_item .minorInfo text {
+  margin-right: 20rpx;
+}

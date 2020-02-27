@@ -1,0 +1,90 @@
+.section_A, .section_B {
+  margin-bottom: 20rpx;
+}
+
+.page .page_bd {
+  margin-bottom: 215rpx;
+}
+
+.item_right icon{
+  /* float: right; */
+}
+
+.page .page_ft {
+  position: fixed;
+}
+
+.select-modal .editArea {
+  max-height: 335px;
+}
+
+.select-modal .jobTypeItem {
+  padding: 15rpx 0rpx;
+  border-bottom: 1px solid #eee;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.select-modal .jobTypeItem .itemOne {
+  color: #1f82b9;
+}
+
+.select-modal .jobTypeItem .itemTwo {
+  color: #179b16;
+}
+
+.select-modal .jobTypeItem .itemThree {
+  color: #404040;
+  display: inline-block;
+  padding: 5rpx 10rpx;
+  margin-right: 20rpx;
+  margin-bottom: 15rpx;
+  margin-top: 10rpx;
+  border: 1px solid #ccc;
+  font-size: 11pt;
+}
+
+.select-modal .jobTypeItem:last-child {
+  border-bottom: 0rpx;
+}
+
+.expIten {
+  color: #404040;
+  display: inline-block;
+  padding: 19rpx 10rpx;
+  border-bottom: 1px solid #ccc;
+  font-size: 11pt;
+  width: 100%;
+}
+
+.maxLength {
+  color: red;
+}
+
+.searchItem {
+  margin-top: 15rpx;
+  padding-bottom: 0rpx;
+  border: 0px;
+}
+
+.searchItem input {
+  width: 75% !important;
+  float: left;
+}
+
+.searchItem button {
+  width: 110rpx;
+  height: 60rpx;
+  font-size: 10pt;
+  padding-left: 5rpx;
+  padding-right: 5rpx;
+}
+
+.resultItem {
+  width: 100%;
+  margin-top: 30rpx;
+  height: 600rpx;
+}
+.select-modal .editArea input{
+  padding: 10rpx;
+}

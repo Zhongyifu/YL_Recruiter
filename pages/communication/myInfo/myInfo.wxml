@@ -1,0 +1,205 @@
+<view class="page">
+  <view class="page_bd">
+    <view class="section section_A">
+
+      <view class="section_item user_profile">
+        <view>
+          <text class="item_left">头像</text>
+        </view>
+        <view class="item_right">
+          <image src='{{userProfile}}'></image>
+          <icon class="iconfont icon-youjiantou" bindtap="updateProfile"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">姓名</text>
+        </view>
+        <view class="item_right">
+          <text>{{userName}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateUserName"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">性别</text>
+        </view>
+        <view class="item_right">
+          <text>{{userSex}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateUserSex"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">微信号</text>
+        </view>
+        <view class="item_right">
+          <text>{{userWechat}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateUserWechat"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">邮箱</text>
+        </view>
+        <view class="item_right">
+          <text>{{userEmail}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateUserEmail"></icon>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="section section_B">
+      <view class="section_item">
+        <view>
+          <text class="item_left">公司</text>
+        </view>
+        <view class="item_right">
+          <text>{{companyName}}</text>
+          <icon data-cid='{{companyId}}' class="iconfont icon-youjiantou" bindtap="updateCompany"></icon>
+        </view>
+      </view>
+    </view>
+
+    <view class="section section_C">
+      <view class="section_item">
+        <view>
+          <text class="item_left">现任职务</text>
+        </view>
+        <view class="item_right">
+          <text>{{companyJob}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updateCompanyJob"></icon>
+        </view>
+      </view>
+
+      <view class="section_item">
+        <view>
+          <text class="item_left">团队介绍</text>
+        </view>
+        <view class="item_right longtext">
+          <text>{{companyIntro}}</text>
+          <icon class="iconfont icon-youjiantou" bindtap="updataCompanyIntro"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 弹窗 -->
+<view class="select-modal">
+
+  <select-modal id="editUserName" fadeStyle="slideDown" height="175px;">
+    <view slot="modalName">
+      <text>修改用户名</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <input class="weui-input" value="{{userName}}" bindinput="editInput_userName" confirm-type="done"></input>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitUserName">确定使用</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="editUserSex" fadeStyle="slideDown" height="270px;">
+    <view slot="modalName">
+      <text>设置性别</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <radio-group bindchange="editInput_userSex">
+          <label class="weui-cell weui-check__label" wx:for="{{userSexItems}}" wx:key="value">
+            <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+            <view class="weui-cell__bd">{{item.name}}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+              <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+            </view>
+          </label>
+        </radio-group>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitUserSex">确定使用</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="editUserWchat" fadeStyle="slideDown" height="175px;">
+    <view slot="modalName">
+      <text>修改微信号</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <input class="weui-input" value="{{userWechat}}" bindinput="editInput_userWechat" onfirm-type="done"></input>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitUserWechat">确定使用</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="editUserEmail" fadeStyle="slideDown" height="175px;">
+    <view slot="modalName">
+      <text>修改邮箱</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <input class="weui-input" value="{{userEmail}}" bindinput="editInput_userEmail"></input>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitUserEmail">确定使用</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="editCompanyName" fadeStyle="slideDown" height="175px;">
+    <view slot="modalName">
+      <text>修改公司名称</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <input class="weui-input" value="{{companyName}}" bindinput="editInput_companyName" confirm-type="done"></input>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitCompanyName">确定使用</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="editCompanyJob" fadeStyle="slideDown" height="175px;" >
+    <view slot="modalName">
+      <text>修改担任的职位</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <input class="weui-input" value="{{companyJob}}" bindinput="editInput_companyJob" confirm-type="done"></input>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitCompanyJob">确定使用</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="editCompanyIntro" fadeStyle="slideDown" height="300px;">
+    <view slot="modalName">
+      <text>修改团队介绍</text>
+    </view>
+    <view slot="modalContent">
+      <view class="editArea">
+        <textarea class="weui-textarea" value="{{companyIntro}}" bindinput="editInput_companyIntro" maxlength='50'></textarea>
+        <view class="weui-textarea-counter" style="color:{{introMaxColor}}">{{introMax}}/50</view>
+      </view>
+      <view class="weui-btn-area">
+        <button type="primary" class="weui-btn" bindtap="submitCompanyIntro">确定使用</button>
+      </view>
+    </view>
+  </select-modal>
+
+</view>

@@ -1,0 +1,70 @@
+/* pages/communication/interview/interview.wxss */
+icon {
+  vertical-align: inherit;
+}
+.resItem {
+  background-color: #fff;
+  /* width: 100%; */
+  height: 200rpx;
+  display: flex;
+  margin-bottom: 25rpx;
+  padding-left: 20rpx;
+  padding-right: 0rpx;
+}
+
+.resItem .userInfo {
+  position: relative;
+  text-align: center;
+  width: 200rpx;
+}
+
+.resItem .userInfo .user_profile {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  margin-top: 15rpx;
+  margin-bottom: 5rpx;
+}
+
+.resItem .user_profile image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.userInfo icon {
+  position: absolute;
+  top:1rpx;
+  right: 15rpx;
+  /* margin-left: 15rpx; */
+}
+.userInfo text{
+  font-size: 11pt;
+}
+
+.interInfo {
+  width: 100%;
+  height: 130rpx;
+  margin-top: 30rpx;
+  color: #666;
+  font-size: 11pt;
+  border-left: 1px solid #1f82b9;
+}
+
+.interInfo view {
+  margin-left: 20rpx;
+  padding: 12rpx 10rpx;
+}
+
+.interInfo view:first-child {
+  border-bottom: 1px solid #ddd;
+}
+
+.interInfo .inter_item {
+  color: #404040;
+  float: right;
+  margin-right: 31rpx;
+}
+.text_dot{
+  margin: 0rpx 12rpx;
+}

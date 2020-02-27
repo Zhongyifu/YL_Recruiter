@@ -1,0 +1,81 @@
+<!--pages/tabBarInfo/jobInfo/jobInfo.wxml-->
+<view class='page'>
+  <view class='page_hd'>
+    <view class="chooseType">
+      <text>请选择职位类型:</text>
+      <picker range='{{jobTypeList}}' range-key="name" value='{{typeIdx}}' bindchange='chooseJobType'>
+        <text>{{jobTypeList[typeIdx].name}}</text>
+      </picker>
+    </view>
+  </view>
+  <view class='page_bd'>
+    <view class="searchList">
+      <view class="searchItem" data-id="searchId" bindtap="goToInformation">
+        <view class="yl-row item-partTop">
+          <view>职位名称</view>
+          <view>9000-10000</view>
+        </view>
+        <view class="yl-row item-partBottom">
+          <view>广州-天河</view>
+          <view>本科</view>
+          <view>三年以上</view>
+        </view>
+      </view>
+
+      <view class="searchItem">
+        <view class="yl-row item-partTop">
+          <view>职位名称</view>
+          <view>9000-10000</view>
+        </view>
+        <view class="yl-row item-partBottom">
+          <view>广州-天河</view>
+          <view>本科</view>
+          <view>三年以上</view>
+        </view>
+      </view>
+
+      <view class="searchItem">
+        <view class="yl-row item-partTop">
+          <view>职位名称</view>
+          <view>9000-10000</view>
+        </view>
+        <view class="yl-row item-partBottom">
+          <view>广州-天河</view>
+          <view>本科</view>
+          <view>三年以上</view>
+        </view>
+      </view>
+
+      <view class="searchItem">
+        <view class="yl-row item-partTop">
+          <view>职位名称</view>
+          <view>9000-10000</view>
+        </view>
+        <view class="yl-row item-partBottom">
+          <view>广州-天河</view>
+          <view>本科</view>
+          <view>三年以上</view>
+        </view>
+      </view>
+
+      <view class="searchItem">
+        <view class="yl-row item-partTop">
+          <view>职位名称</view>
+          <view>9000-10000</view>
+        </view>
+        <view class="yl-row item-partBottom">
+          <view>广州-天河</view>
+          <view>本科</view>
+          <view>三年以上</view>
+        </view>
+      </view>
+
+    </view>
+    <view class="searchBText">
+      <text>----------    最底部了    ----------</text>
+    </view>
+    <view class="pageFixBtn">
+      <button type="primary" bindtap="goToAddNewJob">发布新职位</button>
+    </view>
+  </view>
+</view>

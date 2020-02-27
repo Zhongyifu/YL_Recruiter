@@ -1,0 +1,225 @@
+<!--pages/tabBarInfo/comInfo/incomplete.wxml-->
+<view class="page">
+  <view class="page_hd">
+    <view class="hd-title">完善公司信息</view>
+    <view class="text-sm gray-d">完善的信息可以让求职者更好的了解公司的信息，让沟通更顺畅.</view>
+    <!-- 完善程度 -->
+    <view class="degree">
+      <text class="text-md">完善程度：</text>
+      <progress percent="{{percent}}" stroke-width="12" show-info />
+    </view>
+  </view>
+  <view class="page_bd">
+    <view class="item-title">
+      <text>公司基本信息\t</text>
+      <text>\t0 / 10</text>
+    </view>
+    <view class="item-cells">
+      <!-- Logo -->
+      <view class="yl-row item-cell" bindtap="uplodaLogo">
+        <view>公司Logo</view>
+        <view>未添加 ＞</view>
+      </view>
+      <!-- 是否上市 -->
+      <view class="yl-row item-cell">
+        <view>是否上市</view>
+        <view>
+          <picker bindchange="chooseList" bindcancel='cancel_IPO' range="{{list_IPO}}" range-key="typeName" value='{{ipoIdx}}'>
+            <block wx:if="{{isIPOType}}">
+              <text>{{list_IPO[ipoIdx].typeName}}</text>
+            </block>
+            <block wx:else>
+              <text>未填写 ＞</text>
+            </block>
+          </picker>
+        </view>
+
+      </view>
+      <!-- 公司官网地址 -->
+      <view class="yl-row item-cell" bindtap="writeWebsite">
+        <view>公司官网地址</view>
+        <view>未填写 ＞</view>
+      </view>
+      <!-- 公司简介 -->
+      <view class="yl-row item-cell" bindtap="writeProfile">
+        <view>公司简介</view>
+        <view>未填写 ＞</view>
+      </view>
+      <!-- 公司工作时间 -->
+      <view class="yl-row item-cell" bindtap="chooseWorkTime">
+        <view>工作时间</view>
+        <view>未填写 ＞</view>
+      </view>
+      <!-- 周末休息制度 -->
+      <view class="yl-row item-cell">
+        <view>休息时间</view>
+        <view>
+          <picker bindchange="chooseRestTime" bindcancel="cancel_Rest" range="{{restTimeList}}" range-key="typeName" value="{{restIdx}}">
+            <block wx:if="{{isRestTime}}">
+              <text>{{restTimeList[restIdx].typeName}}</text>
+            </block>
+            <block wx:else>
+              <text>未填写 ＞</text>
+            </block>
+          </picker>
+        </view>
+      </view>
+      <!-- 加班情况 -->
+      <view class="yl-row item-cell">
+        <view>加班情况</view>
+        <view>
+          <picker bindchange="chooseWorkOverTime" bindcancel='cancel_overTime' range="{{overTimeList}}" range-key="typeName" value="{{overIdx}}">
+            <block wx:if='{{isOverTime}}'>
+              <text>{{overTimeList[overIdx].typeName}}</text>
+            </block>
+            <block wx:else>
+              <text>未填写 ＞</text>
+            </block>
+          </picker>
+        </view>
+      </view>
+      <!-- 公司福利 -->
+      <view class="yl-row item-cell" bindtap="chooseWelfare">
+        <view>公司福利</view>
+        <view>
+          <block wx:if='{{isWelfare}}'>
+            <text>已填写 ＞</text>
+          </block>
+          <block wx:else>
+            <text>未填写 ＞</text>
+          </block>
+        </view>
+      </view>
+      <!-- 公司照片 -->
+      <view class="yl-row item-cell" bindtap="uplodaPhotos">
+        <view>公司照片</view>
+        <view>未添加 ＞</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 完善信息的弹窗 -->
+<view class="select-modal">
+  <select-modal id="logo" fadeStyle="slideDown" height="280px;" bindMeeage='close_Logo'>
+    <view slot="modalName">
+      <text>上传Logo</text>
+    </view>
+    <view slot="modalContent">
+      <view class="uplodaArea" bindtap="uplodaLogoImg">
+        <block wx:if="{{isUpload}}">
+          <image src="{{logoSrc}}"></image>
+        </block>
+        <block wx:else>
+          <text>+</text>
+        </block>
+      </view>
+      <view class="btnArea">
+        <button type="primary" bindtap="submitLogoImg">确定使用</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="website" fadeStyle="slideDown" height="180px;" bindMeeage='close_HTTP'>
+    <view slot="modalName">
+      <text>公司官网地址</text>
+    </view>
+    <view slot="modalContent">
+      <view class="yl-row websiteInput">
+        <view class="websiteHead">http://</view>
+        <view class="websiteBody">
+          <input bindinput="inputWebSite"></input>
+        </view>
+      </view>
+      <view class="btnArea">
+        <button type="primary" bindtap="submitWebsite">确认</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="profile" fadeStyle="slideDown" height="320px;" bindMeeage='close_Profile'>
+    <view slot="modalName">
+      <text>公司简介</text>
+    </view>
+    <view slot="modalContent">
+      <view class="inputArea">
+        <textarea class="weui-textarea comprofile" bindtap="inputProfile"></textarea>
+      </view>
+      <view class="btnArea">
+        <button type="primary" bindtap="submitProfile">确认</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="workTime" fadeStyle="slideDown" height="250px;" bindMeeage='close_Working'>
+    <view slot="modalName">
+      <text>工作时间</text>
+    </view>
+    <view slot="modalContent">
+      <view class="inputArea">
+        <view class="inputTime">
+          <text>上午</text>
+          <input type="number" bindinput="time_amH_S_F" maxlength="2"></input>
+          <text>：</text>
+          <input type="number" bindinput="time_amM_S_F" maxlength="2"></input>
+          <text>~</text>
+          <input type="number" bindinput="time_amH_E_F" maxlength="2"></input>
+          <text>：</text>
+          <input type="number" bindinput="time_amM_E_F" maxlength="2"></input>
+        </view>
+        <view class="inputTime">
+          <text>下午</text>
+          <input type="number" bindinput="time_pmH_S_F" maxlength="2"></input>
+          <text>：</text>
+          <input type="number" bindinput="time_pmM_S_F" maxlength="2"></input>
+          <text>~</text>
+          <input type="number" bindinput="time_pmH_E_F" maxlength="2"></input>
+          <text>：</text>
+          <input type="number" bindinput="time_pmM_E_F" maxlength="2"></input>
+        </view>
+      </view>
+      <view class="btnArea">
+        <button type="primary" bindtap="comfirmDate_workTime">确认</button>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="welfare" fadeStyle="slideDown" height="380px;" bindMeeage='close_Welfare'>
+    <view slot='modalName'>
+      <text>公司福利</text>
+    </view>
+    <view slot="modalContent">
+      <view class="welfareArea">
+        <block wx:for='{{welfareList}}' wx:for-item='item' wx:for-index='wIdx' wx:key='welfare'>
+          <text class="select-item {{item.isSelected?'selected':''}}" data-id="{{item.typeId}}" data-idx="{{wIdx}}" bindtap="selectWelfare">{{item.typeName}}</text>
+        </block>
+      </view>
+      <view class='comfirmDate yl-row'>
+        <view class='cancel' bindtap='cancel_welfare'>取消</view>
+        <view class='comfirm' bindtap='comfirmDate_welfare'>确认</view>
+      </view>
+    </view>
+  </select-modal>
+
+  <select-modal id="photos" fadeStyle="slideDown" height="480px;" bindMeeage='close_Photos'>
+    <view slot='modalName'>
+      <text>公司照片</text>
+    </view>
+    <view slot='modalContent' style="height:365px; overflow: scroll">
+      <view class="photArea">
+        <block wx:for='{{comPhotoSrcList}}' wx:for-item='item' wx:key='comPhotoList'>
+          <view class="comPhoto">
+            <image src="{{item}}"></image>
+          </view>
+        </block>
+      </view>
+      <view class="uplodaListArea" bindtap="uplodaComPhoto">
+        <text>+</text>
+      </view>
+      <view class='comfirmDate yl-row'>
+        <view class='cancel' bindtap='cancel_comPhoto'>取消</view>
+        <view class='comfirm' bindtap='comfirmDate_comPhoto'>确认</view>
+      </view>
+    </view>
+  </select-modal>
+</view>

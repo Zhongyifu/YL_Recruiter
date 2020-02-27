@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "select-modal": "/components/modal/modal"
+  },
+  "navigationBarTitleText": "收藏的求职者"
+}

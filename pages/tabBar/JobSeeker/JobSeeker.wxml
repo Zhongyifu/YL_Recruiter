@@ -1,0 +1,132 @@
+<!-- pages/tabBar/JobSeeker/JobSeeker.wxml -->
+<view class="page">
+  <view class="page_hd search_hd">
+    <view class="searchArea">
+      <input bindinput="searchInput"></input>
+      <view class="borderView"></view>
+      <button class="serchBtn" bindtap="searchBtn">
+        <icon class="iconfont icon-search1"></icon>
+      </button>
+    </view>
+    <view class="classify">
+      <view class="classifyItem" bindtap="searchJobType">职位类型</view>
+      <view class="classifyItem" bindtap="searchExperience">工作经验</view>
+      <view class="classifyItem" bindtap="searchMore">更多</view>
+    </view>
+  </view>
+  <view class="page_bd search_bd">
+    <view class="resultList">
+      <block wx:for="{{seekerList}}" wx:key='seekers' wx:for-item='itemName'>
+        <view class="reslutItem" data-index='{{itemName.applicantId}}'>
+          <view class="seekerInfo jobInfo">
+            <text>{{itemName.userName}}</text>
+            <text>{{itemName.userSex}}</text>
+            <text>{{itemName.seekerJob}}</text>
+            <text>{{itemName.educationalBackgroundTypeName}}</text>
+            <text>{{itemName.workingYears}}年</text>
+            <text class="salary">{{itemName.salaryRangeTypeName}}</text>
+          </view>
+          <view class="seekerInfo centerView">
+            <text>{{itemName.applicantStatusTypeName}}</text>
+          </view>
+          <view class="seekerInfo">
+            <text>求职意向:</text>
+            <view class="skillList">
+              <block wx:for='{{itemName.jobThreeNameList}}' wx:key='seekerIntention' wx:for-item='itemInten'>
+                <text>{{itemInten}}</text>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="page_ft">
+    <text>——————</text>
+    <text>{{isEmptyText}}</text>
+    <text>——————</text>
+  </view>
+  <view class="select-modal">
+    <!-- 1 -->
+    <seachModal id="search_jobType" fadeStyle="slideDown" height="460px">
+      <view slot='modalContent'>
+        <view class="editArea">
+          <!-- 第一次循环 -->
+          <block wx:for="{{jobTypeNode_oneRs}}" wx:for-item="item_one" wx:for-index="idx_one" wx:key="jobTypeOne">
+            <view class="jobTypeItem">
+              <view bindtap="openNodeTwo" data-index="{{idx_one}}" data-ffm="{{item_one.ffm}}">
+                <text class="itemOne">Ⅰ.\t{{item_one.name}}</text>
+              </view>
+              <!-- 第二层循环 -->
+              <block wx:if="{{openNodeTwo}}">
+                <block wx:for='{{jobTypeNode_twoRs}}' wx:for-item='item_two' wx:for-index="idx_two" wx:key="jobTypeTwo">
+                  <block wx:if="{{item_two.ffm == item_one.ffm}}">
+                    <!-- 确认归属 -->
+                    <view class="jobTypeItem">
+                      <view bindtap="openNodeThree" data-index='{{idx_two}}' data-sfm="{{item_two.sfm}}">
+                        <text class="itemTwo">Ⅱ.\t{{item_two.name}}</text>
+                      </view>
+                      <!-- 第三层循环 -->
+                      <block wx:if="{{openNodeThree}}">
+                        <block wx:for="{{jobTypeNode_threeRs}}" wx:for-item='item_three' wx:for-index='idx_three' wx:key='jobTypeThree'>
+                          <block wx:if='{{item_three.sfm == item_two.sfm}}'>
+                            <text class="itemThree {{jobTypeId == item_three.id? 'selected':''}}" data-index="{{idx_three}}" data-text="{{item_three.name}}" data-tid='{{item_three.id}}' bindtap="selectedItem">
+                              {{item_three.name}}
+                            </text>
+                          </block>
+                        </block>
+                      </block>
+                    </view>
+                  </block>
+                </block>
+              </block>
+            </view>
+          </block>
+        </view>
+        <view class="weui-btn-area">
+          <button type="primary" class="weui-btn" bindtap="submitJobType">提交</button>
+        </view>
+      </view>
+    </seachModal>
+    <!-- 2 -->
+    <seachModal id="search_experience" fadeStyle="slideDown" height="240px">
+      <view slot='modalContent'>
+        <block wx:for='{{experienceList}}' wx:key='experienceList' wx:for-item='itemName'>
+          <view class="modalItem {{expId == itemName.typeId?'selected':''}}" data-index="{{itemName.typeId}}" bindtap="selectExp">
+            {{itemName.typeName}}
+          </view>
+        </block>
+      </view>
+    </seachModal>
+    <!-- 3 -->
+    <seachModal id="search_more" fadeStyle='slideDown' height='240px'>
+      <view slot='modalContent'>
+        <view class="editArea">
+          <view class="itemList">
+            <text class="">学历水平：</text>
+            <view>
+              <block wx:for="{{more_eduList}}" wx:key='eductionList' wx:for-item='itemName'>
+                <view class="searchItem {{eduId_faker == itemName.typeId?'selected':''}}" data-index='{{itemName.typeId}}' bindtap="selectEducation">
+                  {{itemName.typeName}}
+                </view>
+              </block>
+            </view>
+          </view>
+          <view class="itemList">
+            <text class="">求职状态：</text>
+            <view>
+              <block wx:for="{{more_satatus}}" wx:key='statusList' wx:for-item='itemName'>
+                <view class="searchItem {{statusId_faker == itemName.typeId?'selected':''}}" data-index='{{itemName.typeId}}' bindtap="selectStatus">
+                  {{itemName.typeName}}
+                </view>
+              </block>
+            </view>
+          </view>
+          <view class="weui-btn-area">
+            <button type="primary" class="weui-btn" bindtap="submitMoreSearch">提交</button>
+          </view>
+        </view>
+      </view>
+    </seachModal>
+  </view>
+</view>

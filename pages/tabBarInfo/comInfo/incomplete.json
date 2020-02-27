@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "select-modal": "/components/modal/modal"
+  },
+  "navigationBarTitleText": "完善公司信息"
+}

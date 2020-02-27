@@ -1,0 +1,48 @@
+/* pages/communication/communicated/communicated.wxss */
+
+.searchArea {
+  position: relative;
+  background-color: #1f82b9;
+  height: 110rpx;
+}
+
+.searchArea input {
+  width: 55%;
+  padding: 10rpx 0rpx 10rpx 30rpx;
+  border-radius: 30rpx 0rpx 0rpx 30rpx;
+  background-color: #fff;
+  position: absolute;
+  top: 20rpx;
+  left: 105rpx;
+}
+
+.searchArea view {
+  border-left: 1px solid #ccc;
+  width: 0rpx;
+  height: 55rpx;
+  position: absolute;
+  top: 25rpx;
+  right: 200rpx;
+  z-index: 3;
+}
+
+.searchArea button {
+  width: 100rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  border-radius: 0px 30rpx 30rpx 0px;
+  background-color: #fff;
+  position: absolute;
+  top: 20rpx;
+  right: 104rpx;
+  z-index: 2;
+}
+.searchArea button::after{
+  border-radius:0px;
+  border:0px;
+}
+
+.searchArea button icon{
+  font-size: 21px;
+  vertical-align: inherit;
+}

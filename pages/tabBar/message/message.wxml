@@ -1,0 +1,38 @@
+<!-- pages/tabBar/message/message.wxml -->
+<view class="page">
+    <view class="page_hd search_hd">
+        <view class="searchArea">
+            <input bindinput="searchInput" placeholder="请输入精英名称"></input>
+            <view class="borderView"></view>
+            <button class="serchBtn" bindtap="searchBtn">
+                <icon class="iconfont icon-search1"></icon>
+            </button>
+        </view>
+        <view class="listTitle">
+            <view class="listTitle-left">联系人</view>
+            <view class="listTitle-right">
+                <view>未读：{{unReadMeg}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="page_bd">
+        <view class="listItem" bindtap="messageInfo" data-mid="01">
+            <view class="unRead"></view>
+            <view class="head">
+                <image src="../../../images/hP.jpg" />
+            </view>
+            <view class="info">
+                <view class="info-basic">
+                    <text>求职姓名</text>
+                    <text>应聘职位</text>
+                </view>
+                <view class="info-message">
+                    <text>发送的消息的前十几个字</text>
+                </view>
+            </view>
+            <view class="time">
+                <text>2020-01-01 11:11</text>
+            </view>
+        </view>
+    </view>
+</view>

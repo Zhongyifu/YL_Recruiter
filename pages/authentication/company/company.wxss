@@ -1,0 +1,58 @@
+.page_hd .errorArea{ 
+  background-color: #e64340;
+  color: #fff;
+  font-size: 10pt;
+  text-align: center;
+  padding: 6rpx 0;
+}
+
+.item_right picker {
+  float: left;
+}
+
+.item_right icon {
+  line-height: 130rpx;
+}
+
+.item_right .hasChoose {
+  color: #333;
+}
+
+.uploadArea {
+  border: 1px dotted #333;
+  border-radius: 10rpx;
+  width: 180rpx;
+  height: 180rpx;
+  margin: 0rpx;
+  background-color: #eee;
+  text-align: center;
+}
+
+.uploadArea icon {
+  font-size: 40pt;
+  line-height: 180rpx;
+}
+
+.uploadImg {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 0rpx 10rpx;
+}
+
+.notFlex {
+  display: block !important;
+  padding: 25rpx 0rpx;
+}
+
+.downTemp{
+  margin-bottom: 10rpx;
+}
+.downTemp button{
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 10pt;
+  background-color: #1f82b9;
+  margin: 0rpx;
+}

@@ -1,0 +1,9 @@
+<template name="searchA">
+  <view class="searchArea">
+    <input placeholder="请输入精英姓名"></input>
+    <view></view>
+    <button>
+      <icon class="iconfont icon-search1"></icon>
+    </button>
+  </view>
+</template>
