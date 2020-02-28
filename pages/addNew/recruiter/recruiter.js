@@ -233,11 +233,7 @@ Page({
                 'companySizeTypeId': userCompany.companyScale
               }),
               success: res =>{
-<<<<<<< HEAD
-                console.log(res);
-=======
                 // console.log(res);
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
                 if(res.data.status == 10000){
                   wx.showToast({title:'保存成功',icon:'success'});
                   // wx.switchTab({ url: '../../tabBar/JobSeeker/JobSeeker', });
@@ -250,17 +246,10 @@ Page({
             wx.showModal({
               title: '警告',
               content: '请填写您任职公司的相关信息',
-<<<<<<< HEAD
             })
           }
         });
       }else{  wx.showModal({  title:"警告", content:"获取sessionId出错." }); }
-=======
-            });
-          }
-        });
-      }else{ wx.showModal({ title:"警告", content:"获取sessionId出错." }); }
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
     });
   },
 

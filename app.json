@@ -1,11 +1,6 @@
 {
   "pages": [
-<<<<<<< HEAD
     "pages/tabBarInfo/messageInfo/messageInfo",
-=======
-    "pages/addNew/mapPage/mapPage",
-    "pages/tabBar/JobSeeker/JobSeeker",
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
     "pages/tabBar/message/message",
     "pages/tabBar/JobSeeker/JobSeeker",
     "pages/tabBar/myInfo/myInfo",

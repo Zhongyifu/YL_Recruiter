@@ -91,26 +91,12 @@ Page({
           wx.request({
             url: url + 'recruiterInfo/updateRecruiterUserName.json',
             method: 'POST',
-<<<<<<< HEAD
-            data: JSON.stringify({
-              'userName': _that.data.editName
-            }),
-            success: res => {
-              if (res.data.status == 10000) {
-                _that.setData({
-                  userName: _that.data.editName
-                });
-                wx.showToast({
-                  title: '修改成功'
-                });
-=======
             header:{ "Cookie":'JSESSIONID=' + _that.data.sessionId },
             data: {'userName': _that.data.editName },
             success: res => {
               if (res.data.status == 10000) {
                 _that.setData({  userName: _that.data.editName });
                 wx.showToast({ title: '修改成功' });
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
                 wx.hideLoading();
                 _that.modal_editUserName.closeModal();
               }
@@ -143,10 +129,7 @@ Page({
           wx.request({
             url: url + 'recruiterInfo/updateRecruiterSex.json',
             method: 'POST',
-<<<<<<< HEAD
-=======
             header:{ "Cookie":'JSESSIONID=' + _that.data.sessionId },
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
             data: JSON.stringify({
               'userSex': _that.data.editSex
             }),
@@ -186,14 +169,7 @@ Page({
     const _that = this;
     let verification = util.isSpecial(_that.data.editWechat);
     if (!verification.status) {
-<<<<<<< HEAD
-      wx.showModal({
-        title: '警告',
-        content: verification.errorMsg,
-      })
-=======
       wx.showModal({ title: '警告', content: verification.errorMsg,  })
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
     } else {
       wx.showModal({
         title: '警告',
@@ -207,10 +183,7 @@ Page({
             wx.request({
               url: url + 'recruiterInfo/updateRecruiterWechat.json',
               method: "POST",
-<<<<<<< HEAD
-=======
               header:{ "Cookie":'JSESSIONID=' + _that.data.sessionId },
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
               data: JSON.stringify({
                 'userWechat': _that.data.editWechat
               }),
@@ -259,26 +232,12 @@ Page({
             wx.request({
               url: url + 'recruiterInfo/updateRecruiterMailbox.json',
               method: "POST",
-<<<<<<< HEAD
-              data: JSON.stringify({
-                'recruiterMail': _that.data.editEmail
-              }),
-              success: res => {
-                if (res.data.status == 10000) {
-                  _that.setData({
-                    userEmail: _that.data.editEmail
-                  });
-                  wx.showToast({
-                    title: '修改成功'
-                  });
-=======
               header:{ "Cookie":'JSESSIONID=' + _that.data.sessionId },
               data: JSON.stringify({ 'recruiterMail': _that.data.editEmail  }),
               success: res => {
                 if (res.data.status == 10000) {
                   _that.setData({ userEmail: _that.data.editEmail });
                   wx.showToast({ title: '修改成功'  });
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
                   wx.hideLoading();
                   _that.modal_editUserEmail.closeModal();
                 }
@@ -320,29 +279,15 @@ Page({
           wx.request({
             url: url + 'companyInfo/updateCompanyInfo.json',
             method: "POST",
-<<<<<<< HEAD
-=======
             header:{ "Cookie":'JSESSIONID=' + _that.data.sessionId },
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
             data: JSON.stringify({
               'companyId': _that.data.companyId,
               'companyFullName': _that.data.editCompanyName
             }),
             success: res => {
-<<<<<<< HEAD
-              console.log(e)
-              if (res.data.status == 10000) {
-                _that.setData({
-                  companyName: _that.data.editCompanyName
-                });
-                wx.showToast({
-                  title: '修改成功'
-                });
-=======
               if (res.data.status == 10000) {
                 _that.setData({ companyName: _that.data.editCompanyName  });
                 wx.showToast({ title: '修改成功' });
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
                 wx.hideLoading();
                 _that.modal_editCompanyName.closeModal();
               }
@@ -382,36 +327,18 @@ Page({
       success(res) {
         if (res.confirm) {
           //确认修改
-<<<<<<< HEAD
-          wx.showLoading({
-            title: '加载中'
-          });
-          wx.request({
-            url: url + 'recruiterInfo/updateRecruiterJob.json',
-            method: 'POST',
-=======
           wx.showLoading({ title: '加载中' });
           wx.request({
             url: url + 'recruiterInfo/updateRecruiterJob.json',
             method: 'POST',
             header:{ "Cookie":'JSESSIONID=' + _that.data.sessionId },
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
             data: JSON.stringify({
               'recruiterJob': _that.data.editCompanyJob
             }),
             success: res => {
               if (res.data.status == 10000) {
-<<<<<<< HEAD
-                _that.setData({
-                  companyJob: _that.data.editCompanyJob
-                });
-                wx.showToast({
-                  title: '修改成功'
-                });
-=======
                 _that.setData({ companyJob: _that.data.editCompanyJob });
                 wx.showToast({ title: '修改成功' });
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
                 wx.hideLoading();
                 _that.modal_editCompanyJob.closeModal();
               }
@@ -457,26 +384,14 @@ Page({
           wx.request({
             url: url + 'recruiterInfo/updateTeamIntroduction.json',
             method: 'POST',
-<<<<<<< HEAD
-=======
             header:{ "Cookie":'JSESSIONID=' + _that.data.sessionId },
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
             data: JSON.stringify({
               'teamIntroduction': _that.data.editCompanyIntro
             }),
             success: res => {
               if (res.data.status) {
-<<<<<<< HEAD
-                _that.setData({
-                  companyIntro: _that.data.editCompanyIntro
-                });
-                wx.showToast({
-                  title: '修改成功'
-                });
-=======
                 _that.setData({ companyIntro: _that.data.editCompanyIntro });
                 wx.showToast({ title: '修改成功' });
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
                 wx.hideLoading();
                 _that.modal_editCompanyIntro.closeModal();
               }
@@ -512,20 +427,13 @@ Page({
           method: "POST",
           header: { "Cookie": 'JSESSIONID=' + sessionId },
           success: (res) => {
-<<<<<<< HEAD
-=======
             _that.setData({ sessionId:sessionId })
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
             console.log(res)
             if (res.statusCode == 200) {
               if (res.data != null) {
                 let dataJson = res.data.data;
                 // console.log(dataJson)
-<<<<<<< HEAD
-                if (dataJson.recruiterSex == '男') {
-=======
                 if (dataJson.recruiterSex == '男' || dataJson.recruiterSex == null) {
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
                   _that.setData({
                     userSexItems: [{
                       name: '男',

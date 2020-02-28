@@ -203,13 +203,8 @@ Page({
       success(res) {
         let allDataJson = {};
         allDataJson.jobName = _that.data.jobName;
-<<<<<<< HEAD
-        allDataJson.jobTypeId = _that.data.jobType;
-        allDataJson.skillLabelId = _that.data.jobSkill;
-=======
         allDataJson.jobTypeId = _that.data.jobTypeId;
         allDataJson.skillLabelName = _that.data.jobSkill;
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
         allDataJson.workingLifeTypeId = _that.data.expId;
         allDataJson.educationalBackgroundTypeId = _that.data.eduId;
         allDataJson.salaryRangeTypeId =  _that.data.salaryId;
@@ -219,10 +214,7 @@ Page({
         allDataJson.longitude = _that.data.longitude;
         allDataJson.latitude = _that.data.latitude;
         console.log(allDataJson)
-<<<<<<< HEAD
-=======
         // 数据验证
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
         setDate.getSessionId( arr=> {
           let sessionId ='';
           if(arr.status){

@@ -47,21 +47,13 @@ Page({
       key: 'wechat_session',
       success: (result)=>{
         let sessionId = result.data.sessionId == undefined ? '':result.data.sessionId;
-<<<<<<< HEAD
-        console.log(sessionId)
-=======
         // console.log(sessionId)
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
         wx.request({
           url: url + 'recruiterInfo/getMineInfo.json',
           method: 'POST',
           header:{"Cookie":'JSESSIONID=' + sessionId },
           success: (res) => {
-<<<<<<< HEAD
-            console.log(res)
-=======
             // console.log(res)
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
             if (res.statusCode == 200) {
               if (res.data.data != null) {
                 let dataJson = res.data.data;

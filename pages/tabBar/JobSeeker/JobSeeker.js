@@ -241,16 +241,9 @@ Page({
                       url: url + 'login/miniProgramcLogin.json',
                       data:{ "code": res_login.code },
                       success: res_mini =>{
-<<<<<<< HEAD
-                        console.log(res_mini)
-                        if ( res_mini.data.status == 10000) {
-                          // 判断用户是否已经注册
-                          //  console.log('判断用户是否已经注册'+res_mini.data.data.unRegister)
-=======
                         if ( res_mini.data.status == 10000) {
                           // 判断用户是否已经注册
                           //  console.log(res_mini.data.data.unRegister)
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
                            let storageData = { 'sessionId': res_mini.data.data.sessionId };
                            wx.setStorageSync('wechat_session', storageData);
                            _that.setData({ sessionId: sessionId });
@@ -278,51 +271,6 @@ Page({
                       success: res_bind =>{
                         // console.log('checkBind：'+ res_bind.data.status)
                         if( res_bind.data.status == 20016){
-<<<<<<< HEAD
-=======
-                          // 判断用户是否走完了新增个人信息，职位等流程
-                          // wx.request({
-                          //   url: url + 'login/checkInfo',
-                          //   data: { "code": res_login.code },
-                          //   header: { "Cookie": 'JSESSIONID=' + sessionId },
-                          //   success: res_info => {
-                          //     if (res_info.data.status == 10000) {
-                          //       // 未经走完流程
-                          //       wx.showmodal({
-                          //         title:'警告',
-                          //         content:'您的信息未完善，请前往补充',
-                          //         success: modal => {
-                          //           if (modal.confirm) { wx.redirectTo({ url: '../addNew/recruiter/recruiter'})}
-                          //           else if (modal.cancel){ _that.onLoad(); }
-                          //         }
-                          //       });
-                          //     } else if (res_info.data.status == 20016) {
-                          //       // 已走完流程
-                          //       _that.modal_searchJobType = _that.selectComponent('#search_jobType');
-                          //       _that.modal_searchExperience = _that.selectComponent('#search_experience');
-                          //       _that.modal_more = _that.selectComponent('#search_more');
-                          //       // 获取列表数据
-                          //       wx.request({
-                          //         url: url + "applicantInfo/getApplicantInfoListByParams.json",
-                          //         method: 'POST',
-                          //         data: JSON.stringify({ "pageStart": 1, "rows": 5 }),
-                          //         success: res => {
-                          //           if (res.data.status == 10000) {
-                          //             // console.log(res.data.data.list)
-                          //             _that.setData({ seekerList: res.data.data.list });
-                          //           }
-                          //         }
-                          //       });
-                          //       // 获取搜索项，职位类型的相关数据
-                          //       getDate.getJobType(function (arr) {
-                          //         allJobTypeNode = arr;
-                          //         setJobTypeNode_one(_that)
-                          //       });
-                          //     }
-                          //   }
-                          // });
-
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
                           _that.modal_searchJobType = _that.selectComponent('#search_jobType');
                           _that.modal_searchExperience = _that.selectComponent('#search_experience');
                           _that.modal_more = _that.selectComponent('#search_more');
@@ -361,24 +309,14 @@ Page({
       }else{  wx.showModal({ title:"警告",  content:"获取sessionId出错."  }); }
     });
 
-<<<<<<< HEAD
     // getDate.getSessionId(arr =>{
-=======
-    // getDate.getSessionId( arr =>{
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
     //   let sessionId = '';
     //   if( arr.status ){
     //     sessionId = arr.content.sessionId;
     //     app.userLogin().then( res => {
     //       console.log('promise 方法回调');
     //       console.log(res);
-<<<<<<< HEAD
     //       if(res.errorCode == 0){ }
-=======
-    //       if(res.errorCode == 0){
-            
-    //       }
->>>>>>> 282a0282a1770843611da72881ed34e4f1e51b7a
     //     });
     //   }
     // });
