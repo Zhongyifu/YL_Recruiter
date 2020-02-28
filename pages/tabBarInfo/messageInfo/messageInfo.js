@@ -77,7 +77,8 @@ Page({
     // initiatorId = options.iid;
     receiverId = "receiverId";
     initiatorId = "initiatorId";
-    webUrl = 'ws://localhost:8063/websocket/' + receiverId + "/" + initiatorId + "/B";
+    // webUrl = 'ws://localhost:8063/websocket/' + receiverId + "/" + initiatorId + "/B";
+    webUrl = 'ws://www.hxtschool.xyz/leaflink-websocket/websocket/' + receiverId + "/" + initiatorId + "/B";
     if (!socketOpen) {
       // 创建Socket
       SocketTask = wx.connectSocket({
