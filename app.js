@@ -41,7 +41,7 @@ App({
     sessionId: null,
     // mapAk: 'm64BiNF0ohF4A6zGYxgAx8mZdMpe2pgK',
     mapAk: 'mlRdXCvj5cYSHUQHYGzVr45GTrRgSBZc',
-    // baseUrl: 'http://localhost:8082/', //环境变量
-    baseUrl: 'https://www.hxtschool.xyz/leaflink-recruiter-web/', //环境变量
+    baseUrl: 'http://localhost:8082/', //环境变量
+    // baseUrl: 'https://www.hxtschool.xyz/leaflink-recruiter-web/', //环境变量
   }
 })

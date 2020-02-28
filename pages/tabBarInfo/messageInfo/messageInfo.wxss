@@ -1,9 +1,12 @@
 /* pages/tabBarInfo/messageInfo/messageInfo.wxss */
-
+.page {
+    height: auto;
+}
 .page_hd {
     position: fixed;
     top: 0rpx;
     width: 100%;
+    z-index: 999;
 }
 
 .page_hd .seekerInfo {
@@ -35,7 +38,7 @@
 }
 
 .page_hd .functionArea>view view {
-    margin-top: -20rpx;
+    margin-top: -15rpx;
 }
 
 .page_bd {
@@ -49,36 +52,68 @@
 .page_bd>.content {
     height: 100%;
     padding-top: 15rpx;
+    overflow-y: scroll;
 }
 
-.page_bd>.content>.initiator {
-    display: flex;
-    min-width: 100rpx;
-    max-width: 500rpx;
-    float: right;
-}
-
-.page_bd .initiator>.headP {
+.page_bd .content .headP {
     margin-right: 15rpx;
+    margin-left: 15rpx;
+    width: 120rpx;
 }
 
-.page_bd .initiator>.headP>image {
-    width: 120rpx;
-    height: 120rpx;
+.page_bd .content .headP>image {
+    width: 100rpx;
+    height: 100rpx;
     border-radius: 50%;
 }
-
-.page_bd .initiator>.sendContent {
-    margin-right: 15rpx;
-}
-.page_bd .initiator>.sendContent>text{
+.page_bd .content .sendContent>text{
     font-size: 11pt;
     border-radius: 5rpx;
     background-color: #fff;
     min-height: 55rpx;
     padding: 10rpx 15rpx;
-    line-height: 125rpx;
+    line-height: 105rpx;
+    position: relative;
 }
+
+.page_bd>.content>.initiator {
+    width: 100%;
+    text-align: right;
+    min-height: 115rpx;
+}
+
+.page_bd .initiator>.headP {
+    float: right;
+}
+
+.page_bd .initiator>.sendContent {
+    margin-right: 15rpx;
+}
+
+.page_bd .initiator>.sendContent>text::after {
+    content: '';
+    border: 8px solid #ffffff00;
+    border-left: 8px solid #fff;
+    position: absolute;
+    top: 6px;
+    right: -16px;
+
+}
+
+.page_bd>.content>.receiver {
+    display: flex;
+    width: 100%;
+}
+
+.page_bd .receiver>.sendContent>text::after {
+    content: '';
+    border: 8px solid #ffffff00;
+    border-right: 8px solid #fff;
+    position: absolute;
+    top: 6px;
+    left: -16px;
+}
+
 
 .page_bd>.occupyBottom {
     height: 111rpx;
@@ -91,6 +126,7 @@
     width: 100%;
     background-color: #fff;
     display: flex;
+    z-index: 999;
 }
 
 .page_foot>.easySend {

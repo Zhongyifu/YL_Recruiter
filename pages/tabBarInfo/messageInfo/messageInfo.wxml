@@ -27,17 +27,30 @@
     <view class="page_bd">
         <view class="occupyTop"></view>
         <view class="content">
-            <!-- 用户自己发出 -->
-            <view class="initiator">
-                <view class="sendContent">
-                    <text>发送的内容</text>
-                </view>
-                <view class="headP">
-                    <image src="../../../images/hP.jpg" />
-                </view>
-            </view>
-            <!-- 对方发出的 -->
-            <view class="receiver"></view>
+            <block wx:for="{{messageList}}" wx:for-item="itemName" wx:key="messageList">
+                <block wx:if="{{itemName.type =='I'}}">
+                    <!-- 用户自己发出 -->
+                    <view class="initiator">
+                        <view class="headP">
+                            <image src="{{initiatorInfo.hp}}" />
+                        </view>
+                        <view class="sendContent">
+                            <text>{{itemName.content}}</text>
+                        </view>
+                    </view>
+                </block>
+                <block wx:elif="{{itemName.type =='R'}}">
+                    <!-- 对方发出的 -->
+                    <view class="receiver">
+                        <view class="headP">
+                            <image src="{{receiverInfo.hp}}" />
+                        </view>
+                        <view class="sendContent">
+                            <text>{{itemName.content}}</text>
+                        </view>
+                    </view>
+                </block>
+            </block>
         </view>
         <view class="occupyBottom"></view>
     </view>
@@ -47,10 +60,10 @@
         </view>
         <view class="typingArea">
             <!-- <textarea placeholder="请输入.."></textarea> -->
-            <textarea placeholder="请输入 ..." maxlength="140" adjust-position="{{false}}" bindfocus="getKeyboardH" bindblur="restKeyboard"></textarea>
+            <textarea placeholder="请输入 ..." value="{{afterSend}}" maxlength="140" adjust-position="{{false}}" bindfocus="getKeyboardH" bindblur="restKeyboard" bindinput="inputMessage"></textarea>
         </view>
         <view class="sendBtn">
-            <button>发送</button>
+            <button bindtap="sendMessage">发送</button>
         </view>
     </view>
 </view>
