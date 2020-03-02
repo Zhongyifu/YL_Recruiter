@@ -5,8 +5,8 @@ const getDate = require('../../../utils/getData.js');
 let webUrl = 'ws://localhost:8063/websocket/';
 let socketOpen;  //链接状态
 let SocketTask; //socketD对象
-let receiverId;
-let initiatorId;
+let applicantId;
+let recruiterId;
 Page({
 
   data: {
@@ -75,10 +75,10 @@ Page({
     let _that = this;
     // receiverId = options.rid;
     // initiatorId = options.iid;
-    receiverId = "receiverId";
-    initiatorId = "initiatorId";
-    // webUrl = 'ws://localhost:8063/websocket/' + receiverId + "/" + initiatorId + "/B";
-    webUrl = 'ws://www.hxtschool.xyz/leaflink-websocket/websocket/' + receiverId + "/" + initiatorId + "/B";
+    applicantId = "f0870e37a0724656be2d7ac9d1eaf38c";
+    recruiterId = "9fcb0f2cd58249bb8de0638d6fb5d105";
+    webUrl = 'ws://localhost:8063/websocket/' + applicantId + "/" + recruiterId + "/B";
+    // webUrl = 'ws://www.hxtschool.xyz/leaflink-websocket/websocket/' + receiverId + "/" + initiatorId + "/B";
     if (!socketOpen) {
       // 创建Socket
       SocketTask = wx.connectSocket({
@@ -127,15 +127,9 @@ Page({
     })
     SocketTask.onMessage(onMessage => {
       console.log('监听 WebSocket 接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
-      // let onMessage_data = JSON.parse(onMessage.data)
-
-      // console.log('------------------ that.data.allContentList ------------------')
-      // console.log(that.data.allContentList)
-      // _that.bottom();
     })
   },
 
-  onShow: function (e) { },
   onHide: function () { SocketTask.close() },
 
 })
