@@ -1,7 +1,12 @@
 /* pages/tabBarInfo/messageInfo/messageInfo.wxss */
+page {
+    background-color: #eee;
+}
+
 .page {
     height: auto;
 }
+
 .page_hd {
     position: fixed;
     top: 0rpx;
@@ -52,6 +57,7 @@
 .page_bd>.content {
     height: 100%;
     padding-top: 15rpx;
+    padding-bottom: 25rpx;
     overflow-y: scroll;
 }
 
@@ -66,20 +72,131 @@
     height: 100rpx;
     border-radius: 50%;
 }
-.page_bd .content .sendContent>text{
+
+.page_bd .content .sendContent>.contentBody {
+    position: relative;
+}
+
+.page_bd .content .sendContent .text {
     font-size: 11pt;
     border-radius: 5rpx;
     background-color: #fff;
-    min-height: 55rpx;
+    /* min-height: 55rpx; */
     padding: 10rpx 15rpx;
-    line-height: 105rpx;
+    /* line-height: 105rpx; */
     position: relative;
+    min-height: 50rpx;
+}
+
+.page_bd .content .sendContent .msgCorver {
+    position: relative;
+}
+
+.page_bd .content .sendContent .msgCorver .iconfont {
+    position: absolute;
+    top: 100rpx;
+    left: 70rpx;
+}
+
+.page_bd .content .sendContent .msgTem {
+    width: 444rpx;
+    height: 400rpx;
+    border-radius: 5rpx;
+}
+
+.page_bd .content .msgTem>.msgTem-title {
+    width: 95%;
+    height: 40rpx;
+    margin: 0 auto;
+    color: #999;
+    font-size: 9pt;
+    border-bottom: 2rpx solid #ccc;
+    margin-top: 5rpx;
+    text-align: left;
+}
+
+.page_bd .content .msgTem>.msgTem-content {
+    width: 95%;
+    margin: 0 auto;
+    height: 290rpx;
+    font-size: 8pt;
+    color: #999;
+}
+
+.page_bd .msgTem-content .msgTem-item {
+    margin: 10rpx 0rpx;
+}
+
+.page_bd .msgTem-content .jobName {
+    font-size: 10pt;
+    color: #666;
+}
+
+.page_bd .msgTem-content .salary {
+    font-size: 10pt;
+    color: #1f82b9;    
+    margin-left: auto;
+}
+
+.page_bd .msgTem-content .comName {
+    line-height: 50rpx;
+    margin-left: 20rpx;
+
+}
+.page_bd .msgTem-content .interview text:first-child{
+    width: 146rpx;
+}
+.page_bd .msgTem-content .interview text{
+    text-align: left;
+}
+
+.page_bd .msgTem-content .msgTem-item {
+    display: flex;
+}
+
+.page_bd .msgTem-content .msgTem-item image {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 10%;
+}
+
+.page_bd .content .msgTem>.msgTem-foot {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 15rpx;
+    color: #999;
+    font-size: 9pt;
+    border-top: 2rpx solid #ccc;
+    display: flex;
+}
+
+.page_bd .content .msgTem-foot .msgTem-info image {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10rpx;
+}
+
+.page_bd .content .msgTem>.msgTem-foot view:last-child {
+    margin-left: auto;
+}
+
+.page_bd>.content>.initiator .text {
+    float: right;
+    margin-left: 10rpx;
+}
+
+.page_bd>.content>.receiver .text {
+    float: left;
+    margin-right: 10rpx;
 }
 
 .page_bd>.content>.initiator {
     width: 100%;
     text-align: right;
     min-height: 115rpx;
+    margin-bottom: 10rpx;
 }
 
 .page_bd .initiator>.headP {
@@ -88,9 +205,15 @@
 
 .page_bd .initiator>.sendContent {
     margin-right: 15rpx;
+    padding-top: 20rpx;
 }
 
-.page_bd .initiator>.sendContent>text::after {
+.page_bd .receiver>.sendContent {
+    margin-right: 15rpx;
+    padding-top: 20rpx;
+}
+
+.page_bd .initiator>.sendContent .text::after {
     content: '';
     border: 8px solid #ffffff00;
     border-left: 8px solid #fff;
@@ -103,9 +226,10 @@
 .page_bd>.content>.receiver {
     display: flex;
     width: 100%;
+    margin-bottom: 10rpx;
 }
 
-.page_bd .receiver>.sendContent>text::after {
+.page_bd .receiver>.sendContent .text::after {
     content: '';
     border: 8px solid #ffffff00;
     border-right: 8px solid #fff;

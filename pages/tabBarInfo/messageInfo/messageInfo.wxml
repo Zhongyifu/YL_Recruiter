@@ -28,25 +28,61 @@
         <view class="occupyTop"></view>
         <view class="content">
             <block wx:for="{{messageList}}" wx:for-item="itemName" wx:key="messageList">
-                <block wx:if="{{itemName.type =='I'}}">
+                <block wx:if="{{itemName.type ==='I'}}">
                     <!-- 用户自己发出 -->
                     <view class="initiator">
                         <view class="headP">
                             <image src="{{initiatorInfo.hp}}" />
                         </view>
                         <view class="sendContent">
-                            <text>{{itemName.content}}</text>
+                            <block wx:if="{{itemName.msgType === 'A001'}}">
+                                <view class="text">{{itemName.content}}</view>
+                                <icon class="iconfont {{itemName.msgStatus}}"></icon>
+                            </block>
+                            <block wx:elif="{{itemName.msgType === 'A002'}}">
+                                <view class="text">{{itemName.content}}</view>
+                                <icon class="iconfont {{itemName.msgStatus}}"></icon>
+                            </block>
+                            <block wx:elif="{{itemName.msgType === 'A003'}}">
+                                <view class="text">{{itemName.content}}</view>
+                                <icon class="iconfont {{itemName.msgStatus}}"></icon>
+                            </block>
+                            <block wx:elif="{{itemName.msgType === 'A004'}}">
+                                <view class="msgCorver">
+                                    <view class="text msgTem">
+                                        <view class="msgTem-title">面试要求</view>
+                                        <view class="msgTem-content">
+                                            <view class="msgTem-info">
+                                                <view class="msgTem-item"><text class="jobName">JAVA高级工程师</text><text class="salary">11K-12K</text></view>
+                                                <view class="msgTem-item"><image src="../../../images/hP.jpg"/><text class="comName">公司名称</text></view>
+                                                <view class="msgTem-item"><text>备   注：</text><text >备注的内容</text></view>
+                                                <view class="msgTem-item"><text>面试时间：</text><text>2020-03-03 12:12</text></view>
+                                                <view class="msgTem-item interview"><text>面试地点：</text><text>面试地址面试地址面试地址面试地址面试地址</text></view>
+                                            </view>
+                                        </view>
+                                        <view class="msgTem-foot">
+                                            <view class="msgTem-info">
+                                                <image src="{{receiverInfo.hp}}" />
+                                                <text>{{receiverInfo.name}}</text>
+                                            </view>
+                                            <view>点击查看详情</view>
+                                        </view>
+                                    </view>
+                                    <icon class="iconfont {{itemName.msgStatus}}"></icon>
+                                </view>
+                            </block>
                         </view>
                     </view>
                 </block>
-                <block wx:elif="{{itemName.type =='R'}}">
+                <block wx:elif="{{itemName.type ==='R'}}">
                     <!-- 对方发出的 -->
                     <view class="receiver">
                         <view class="headP">
                             <image src="{{receiverInfo.hp}}" />
                         </view>
                         <view class="sendContent">
-                            <text>{{itemName.content}}</text>
+                            <view class="text">{{itemName.content}}</view>
+                            <icon class="iconfont {{itemName.msgStatus}}"></icon>
                         </view>
                     </view>
                 </block>

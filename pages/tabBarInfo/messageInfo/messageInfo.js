@@ -1,4 +1,5 @@
 // pages/tabBarInfo/messageInfo/messageInfo.js
+"use strict";
 const app = getApp();
 const url = app.globalData.baseUrl;
 const getDate = require('../../../utils/getData.js');
@@ -16,7 +17,7 @@ Page({
 
     receiverInfo: {
       "id": "0001",
-      "name": "name",
+      "name": "最多四字",
       "job": "job",
       "hp": "../../../images/hP.jpg"
     },
@@ -27,21 +28,10 @@ Page({
     },
 
     messageList: [
-      { "id": "0001", "type": "I", "content": "initiator0" },
-      { "id": "0002", "type": "R", "content": "receiver0" },
-      { "id": "0003", "type": "I", "content": "initiator1" },
-      { "id": "0004", "type": "R", "content": "receiver1" },
-      { "id": "0005", "type": "I", "content": "initiator2" },
-      { "id": "0006", "type": "I", "content": "initiator3" },
-      { "id": "0007", "type": "R", "content": "receiver2" },
-      { "id": "0007", "type": "R", "content": "receiver3" },
-      { "id": "0008", "type": "I", "content": "initiator4" },
-      { "id": "0007", "type": "R", "content": "receiver3" },
-      { "id": "0008", "type": "I", "content": "initiator4" },
-      { "id": "0007", "type": "R", "content": "receiver3" },
-      { "id": "0008", "type": "I", "content": "initiator4" },
-      { "id": "0007", "type": "R", "content": "receiver3" },
-      { "id": "0008", "type": "I", "content": "initiator4" }
+      { "id": "0001", "type": "I", "content": "initiator0","msgStatus":"icon-isRead","msgType":"A001" },
+      { "id": "0002", "type": "R", "content": "receiver0", "msgStatus":"icon-unRead","msgType":"A002"},
+      { "id": "0003", "type": "I", "content": "initiator1", "msgStatus":"icon-warning","msgType":"A003"},
+      { "id": "0004", "type": "I", "content": "A0004", "msgStatus":"icon-loading","msgType":"A004"},
     ]
   },
 
@@ -51,7 +41,6 @@ Page({
   restKeyboard: function () {
     this.setData({ boardHieght: "0" });
   },
-
   inputMessage: function (e) {
     this.setData({ msgContent_f: e.detail.value });
   },
@@ -59,7 +48,7 @@ Page({
   // 发送文字消息
   sendMessage: function (e) {
     let _that = this;
-    let msg = "A0001&"+_that.data.msgContent_f;
+    let msg = "A0001&" + _that.data.msgContent_f;
     // _that.setData({ messageList: _that.data.messageList.concat(msg), afterSend: "" });
     if (socketOpen) {
       // 如果打开了socket就发送数据给服务器
@@ -73,12 +62,22 @@ Page({
 
   onLoad: function (options) {
     let _that = this;
+    let sessionId = '';
+    let msgTemolete;  // 消息UI模版
+    let dataList = _that.data.messageList;
+
+    return false;
     // receiverId = options.rid;
     // initiatorId = options.iid;
     applicantId = "f0870e37a0724656be2d7ac9d1eaf38c";
     recruiterId = "9fcb0f2cd58249bb8de0638d6fb5d105";
     webUrl = 'ws://localhost:8063/websocket/' + applicantId + "/" + recruiterId + "/B";
     // webUrl = 'ws://www.hxtschool.xyz/leaflink-websocket/websocket/' + receiverId + "/" + initiatorId + "/B";
+    // 获取聊天记录
+    getDate.getSessionId(arr => {
+      if (arr.status) { sessionId = arr.content.sessionId; } 
+      else { wx.showModal({ title: '警告', content: 'sessionId获取失败' }); }
+    });
     if (!socketOpen) {
       // 创建Socket
       SocketTask = wx.connectSocket({
@@ -87,32 +86,62 @@ Page({
         method: 'post',
         success: function (res) {
           console.log('WebSocket 连接创建成功', res);
-          // 获取聊天记录
-          getDate.getSessionId(arr => {
-            let sessionId = '';
-            if (arr.status) {
-              sessionId = arr.content.sessionId;
-              wx.request({
-                url: url + '',
-                data: {},
-                header: { "Cookie": 'JSESSIONID=' + sessionId },
-                method: 'GET',
-                dataType: 'json',
-                responseType: 'text',
-                success: (result) => { },
-              });
-            } else {
-              wx.showModal({ title: '警告', content: 'sessionId获取失败' });
-            }
+          wx.request({
+            url: url + '',
+            data: {"pageStart":"1","rows":10},
+            header: { "Cookie": 'JSESSIONID=' + sessionId },
+            method: 'GET',
+            dataType: 'json',
+            success: (result) => {
+              console.log(result);
+             if(result.status === 10000){
+               if(result.data != null){
+                 let dataJson = result.data;
+                 for(let i in dataJson){
+                   // 消息是否已读 
+                   if(dataJson[i].isRead === "0"){
+                     dataJson[i].push({"msesageStatus":"icon-unRead"});
+                   } else if(dataJson[i].isRead === "1"){
+                     dataJson[i].push({"msesageStatus":"icon-isRead"});
+                   }
+
+                   // 某条记录的归属 0=招聘者发出  1=求职者发出
+                   if(dataJson[i].sender === "0"){
+                     dataJson[i].push({"messageType":"R"});
+                   } else if(dataJson[i].sender === "1"){
+                     dataJson[i].push({"messageType":"A"});
+                   }
+
+                   // 区分消息类型 
+                   if(dataJson[i].messageType === "A0001"){
+                    //  文字消息
+                    
+                   } else if(dataJson[i].messageType === "A0002"){
+                    //  职位消息
+                   } else if(dataJson[i].messageType === "A0003"){
+                    //  简历消息
+                   } else if(dataJson[i].messageType === "A0004"){
+                    //  面试消息
+                   } else if(dataJson[i].messageType === "A0005"){
+                    //  请求交换手机号
+                   } else if(dataJson[i].messageType === "A0006"){
+                    //  请求交换微信号
+                   }
+                 }
+               }
+             } else {
+              wx.showToast({ title: '接口调用成功单返回错误！stauts:' + result.status });
+             }
+            },
           });
         },
         fail: function (err) {
-          wx.showToast({ title: '网络异常！', })
+          wx.showToast({ title: '网络异常！' });
           console.log(err)
-        },
-      })
+        }
+      });
     }
-
+    
     SocketTask.onOpen(res => {
       socketOpen = true;
       console.log('监听 WebSocket 连接打开事件。', res)
